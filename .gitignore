@@ -35,3 +35,4 @@ public/uploads/*
 
 # Yettings personalisation
 config/yetting.yml
+.localeapp
