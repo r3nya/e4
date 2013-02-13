@@ -3,6 +3,10 @@ E4::Application.routes.draw do
 
   resources :admin, :only => ['index']
 
+  namespace :admin do
+    resources :menulinks
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

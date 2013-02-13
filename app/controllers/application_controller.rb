@@ -24,6 +24,8 @@ class ApplicationController < ActionController::Base
     if user_signed_in?
       @user = current_user
     end
+    @menulinks = Menulink.ordered
+    @localelist = [['en', 'English'], ['ru', 'Русский']]
   end
 
   def need_one_admin
@@ -43,7 +45,6 @@ class ApplicationController < ActionController::Base
   end
 
   def set_locale
-    @localelist = [['en', 'English'], ['ru', 'Русский']]
     if params[:locale].blank?
       if cookies[:locale].blank?
         I18n.locale = extract_locale_from_accept_language_header

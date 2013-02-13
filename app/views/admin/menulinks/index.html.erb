@@ -1,0 +1,12 @@
+<% provide :title, t(:menulinks_index) %>
+<header>
+  <h3><%= t(:menulinks_index) %></h3>
+</header>
+
+<article>
+  <p><%= t(:menulinks_description) %></p>
+  <div class="rightfloat">
+    [<%= link_to t(:add_menulink), new_admin_menulink_path %>]
+  </div>
+  <div class="clear"></div>
+</article>

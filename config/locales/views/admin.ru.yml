@@ -4,5 +4,6 @@ ru:
   adminiface: "Интерфейс администратора"
   rails: "Rails"
   ruby: "Ruby"
+  settings: "Настройки"
   systeminfo: "Системная информация"
   version: "Версия %{product}: %{version}"

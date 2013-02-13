@@ -1,5 +1,6 @@
 en:
   login: "Login"
+  no_avaliable_menulinks: "There is no menulinks yet"
   register: "Register"
   welcome: "Welcome, %{user}!"
   footer_html: '© 2014 %{team}<br>Used Ruby on Rails power. <a href="http://delta-zet.com">Delta-Zet LLC</a> production.'

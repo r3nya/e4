@@ -23,6 +23,7 @@ end
 gem 'jquery-rails'
 
 group :development do
+  gem 'annotate'
   gem 'mailcatcher'
 end
 
@@ -50,3 +51,6 @@ gem 'devise-i18n'
 
 # Yettings (fucking personalisation :))
 gem 'yettings'
+
+# Model translation
+gem 'rails-translate'

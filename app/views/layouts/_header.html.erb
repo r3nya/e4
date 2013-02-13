@@ -1,7 +1,9 @@
 <header class="siteheader">
   <div class="menu rightfloat">
-    <%= link_to 'shit', '/' %>
-    <%= link_to 'piss', '/' %>
+    <% if @menulinks.empty? %>
+      <%= t(:no_avaliable_menulinks) %>
+    <% else %>
+    <% end %>
   </div>
   <div class="userlinks rightfloat">
     <% if user_signed_in? %>

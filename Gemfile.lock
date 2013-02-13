@@ -28,6 +28,8 @@ GEM
     activesupport (3.2.12)
       i18n (~> 0.6)
       multi_json (~> 1.0)
+    annotate (2.5.0)
+      rake
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
     builder (3.0.4)
@@ -93,6 +95,8 @@ GEM
       activesupport (= 3.2.12)
       bundler (~> 1.0)
       railties (= 3.2.12)
+    rails-translate (1.0.0)
+      rails (>= 3.0.0)
     railties (3.2.12)
       actionpack (= 3.2.12)
       activesupport (= 3.2.12)
@@ -157,12 +161,14 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  annotate
   coffee-rails (~> 3.2.1)
   devise
   devise-i18n
   jquery-rails
   mailcatcher
   rails (= 3.2.12)
+  rails-translate
   rspec-rails
   sass-rails (~> 3.2.3)
   sqlite3

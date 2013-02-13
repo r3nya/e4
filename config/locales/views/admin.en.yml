@@ -4,5 +4,6 @@ en:
   adminiface: "Administrative interface"
   rails: "Rails"
   ruby: "Ruby"
+  settings: "Settings"
   systeminfo: "System information"
   version: "%{product} version: %{version}"

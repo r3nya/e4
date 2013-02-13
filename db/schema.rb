@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130213153114) do
+ActiveRecord::Schema.define(:version => 20130213193921) do
+
+  create_table "menulinks", :force => true do |t|
+    t.string   "title_en",   :default => "NEED ENGLISH TRANSLATION"
+    t.string   "title_ru",   :default => "НУЖЕН РУССКИЙ ПЕРЕВОД"
+    t.string   "url"
+    t.integer  "range",      :default => 0
+    t.datetime "created_at",                                         :null => false
+    t.datetime "updated_at",                                         :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "",    :null => false

@@ -10,4 +10,8 @@
     <li><%= t 'version', :product => t(:ruby), :version => RUBY_VERSION %></li>
     <li><%= t 'version', :product => t(:rails), :version =>  Rails::VERSION::STRING %></li>
   </ul>
+  <h4><%= t(:settings) %></h4>
+  <ul>
+    <li><%= link_to t(:menulinks_index), admin_menulinks_path %></li>
+  </ul>
 </article>
