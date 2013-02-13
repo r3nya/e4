@@ -1,0 +1,13 @@
+defaults: &defaults
+  base_title: "Xilitra Linux"
+  team_name: "Xilitra Team"
+  site_name: "Xilitra Linux"
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

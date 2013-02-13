@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= full_title(yield(:title)) %></title>
+  <%= stylesheet_link_tag    "default/default", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= render 'layouts/header' %>
+
+<div class="noticies">
+  <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, :class => "flash flash_#{name}" if msg.is_a?(String) %>
+  <% end %>
+</div>
+
+<div class="content">
+  <%= yield %>
+</div>
+
+<footer>
+  <div class="footer_text center">
+    <%= t 'footer_html', :team => '' %>
+    <p>
+      Avaliable languages
+      <% @localelist[0..-2].each do |locale| %>
+        <%= link_to locale[1], url_for(:locale => locale[0]) %> |
+      <% end %>
+      <%= link_to @localelist.last[1], url_for(:locale => @localelist.last[0]) %>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>

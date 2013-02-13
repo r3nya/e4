@@ -1,0 +1,237 @@
+// All-in-one style file :)
+// Divides by sections
+
+// Before everything: CSS Reset
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+// HTML5 display-role reset for older browsers
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+// CSS Reset end
+
+// =====================================================================================================================
+// = Common parameters =================================================================================================
+// =====================================================================================================================
+
+// Colors, used in site.
+// Please, don't use inline colors in any part of CSS/SCSS.
+
+$red: #a40000;
+$yellow: #fcaf3e;
+$gray: #babdb6;
+$dark-gray: #2e3436;
+$steel: #555753;
+$white: #d3d7cf;
+$blue: #729fcf;
+$green: #8ae234;
+
+// Usable classes-like-inline-stylers.
+
+.clear {
+  clear: both;
+  padding-bottom: 0.5em;
+}
+
+.center-block {
+  margin: 0 auto;
+}
+
+.center {
+  text-align: center;
+}
+
+.rightfloat {
+  float: right;
+  clear: both;
+}
+
+.clear {
+  clear: both;
+}
+
+// Usable mixins
+
+@mixin padding {
+  padding: 1%;
+}
+
+@mixin margin {
+  margin: 1%;
+}
+
+@mixin ramochka_mikhaila {
+  border-radius: 8px;
+}
+
+// General theming
+
+body {
+  background-color: $dark-gray;
+  color: $white;
+  font-size: 1em;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 4px;
+  line-height: 1.2em;
+}
+
+// Links
+
+a {
+  color: $yellow;
+  text-decoration: none;
+}
+
+// Typography
+
+h3 {
+  font-size: 1.75em;
+  line-height: 1.95em;
+  font-weight: bold;
+}
+
+h4 {
+  font-size: 1.5em;
+  line-height: 1.7em;
+}
+
+p {
+  margin: 8px 0;
+}
+
+i, em {
+  font-style: italic;
+}
+
+ul {
+  margin-left: 30px;
+  list-style: square;
+}
+
+b {
+  font-weight: bold;
+}
+
+// Error messages
+
+.flash {
+  @include padding;
+  @include margin;
+  @include ramochka_mikhaila;
+}
+
+.flash_error {
+  background: $red;
+}
+
+.flash_notice {
+  background: $green;
+  color: $dark-gray;
+}
+
+// Forms
+
+input, select {
+  width: 40em;
+}
+
+input[type="checkbox"] {
+  width: 1em;
+}
+
+div.field_with_errors {
+  margin: 0;
+  padding: 0;
+}
+
+// Tables
+
+table {
+  width: 92%;
+  margin-left: 4%;
+  border: 1px solid $gray;
+}
+
+tr {
+  min-height: 2.2em;
+  line-height: 2.2em;
+  &:hover {
+    background: $gray;
+    color: $dark-gray;
+    a {
+      color: $dark-gray;
+    }
+  }
+}
+
+th {
+  background: $gray;
+  color: $dark-gray;
+}
+
+// =====================================================================================================================
+
+// Header
+
+.siteheader {
+  position: relative;
+  padding-bottom: 0.2em;
+}
+
+.logo {
+  display: block;
+  width: 10em;
+  height: 2.2em;
+  line-height: 2.2em;
+  text-align: center;
+  font-weight: bold;
+}
+
+// Footer
+
+// Content
+
+.content {
+  @include padding;
+  min-height: 100px;
+}
