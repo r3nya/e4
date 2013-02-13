@@ -6,6 +6,7 @@
   <div class="userlinks rightfloat">
     <% if user_signed_in? %>
       <%= t 'welcome', :user => @user.nick %>
+        <%= @user.id %>
       <%= link_to "[X]", destroy_user_session_path, :method => :delete %> |
       <% if current_user.admin? %>
          <%= link_to t(:adminiface), admin_index_path %> |
@@ -16,6 +17,6 @@
       <%= link_to t(:login), new_user_session_path %>
     <% end %>
   </div>
-  <%= link_to Yettings.site_name, root_path, :class => 'logo' %>
+  <%= link_to Yetting.site_name, root_path, :class => 'logo' %>
   <div class="clear"></div>
 </header>

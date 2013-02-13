@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130213120839) do
+ActiveRecord::Schema.define(:version => 20130213153114) do
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "",    :null => false
@@ -32,6 +32,10 @@ ActiveRecord::Schema.define(:version => 20130213120839) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
+    t.datetime "banned_at"
+    t.boolean  "is_active",              :default => true
+    t.string   "ban_reason"
+    t.integer  "banned_by_id"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
