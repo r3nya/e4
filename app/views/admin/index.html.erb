@@ -5,4 +5,9 @@
 
 <article>
   <p><%= t(:adm_welcome_desc) %></p>
+  <h4><%= t(:systeminfo) %></h4>
+  <ul>
+    <li><%= t 'version', :product => t(:ruby), :version => RUBY_VERSION %></li>
+    <li><%= t 'version', :product => t(:rails), :version =>  Rails::VERSION::STRING %></li>
+  </ul>
 </article>
