@@ -34,4 +34,4 @@ public/uploads/*
 .DS_Store
 
 # Yettings personalisation
-config/yettings.yml
+config/yetting.yml
