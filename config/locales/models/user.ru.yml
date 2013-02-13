@@ -2,9 +2,9 @@ ru:
   activerecord:
     attributes:
       user:
-        nick: "Ник"
+        current_password: "Текущий пароль"
         email: "E-mail"
+        nick: "Ник"
         password: "Пароль"
         password_confirmation: "Подтверждение пароля"
         remember_me: "Запомнить меня"
-        current_password: "Текущий пароль"

@@ -44,9 +44,6 @@ end
 # Rspec for testing.
 gem 'rspec-rails'
 
-# Easy localization
-gem 'localeapp'
-
 # Devise
 gem 'devise'
 gem 'devise-i18n'

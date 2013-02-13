@@ -1,0 +1,5 @@
+ru:
+  login: "Войти"
+  register: "Зарегистрироваться"
+  welcome: "Добро пожаловать, %{user}!"
+  footer_html: '© 2014 %{team}<br>Сайт построен на силе Ruby on Rails. Создано <a href="http://delta-zet.com">ООО "Дельта-Зет"</a>'
