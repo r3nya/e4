@@ -25,9 +25,11 @@
           <tr>
             <td><%= mlink.title %></td>
             <td><%= "/#{mlink.url}/" %></td>
-            <td><%= mlink.range %></td>
+            <td class="center"><%= mlink.range %></td>
             <td><%= link_to (t 'common.actions.edit', :obj => (t 'objects.menulink.self')), edit_admin_menulink_path(mlink) %></td>
-            <td></td>
+            <td>
+              <%= link_to (t 'common.actions.destroy', :obj => (t 'objects.menulink.self')), admin_menulink_path(mlink), :data => { :confirm => (t 'common.messages.warnings.are_you_sure') }, :method => :delete %>
+            </td>
           </tr>
           <tr class="small">
             <td colspan="5">

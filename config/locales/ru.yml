@@ -25,6 +25,7 @@ ru:
         self: Самозабан
       update: Обновить %{obj}
       add: Добавить %{obj}
+      destroy: Удалить %{obj}
     footer:
       footer_html: © 2014 %{team}. <br>Построено на силе Ruby on Rails. Создано <a href='http://delta-zet.com'>ООО "Дельта-Зет"</a>.
       email_signature_html: <i>С уважением, <br>%{team}.</i>
@@ -32,6 +33,7 @@ ru:
       errors:
         no_avaliable_menulinks: В главном меню нету ссылок.
         no_users: Судя по всему, e4 был только что установлен, или же ты опять похерил базу ;-) Пожалуйста, зарегистрируйте первого пользователя. Учтите, что ему будут автоматически присвоены права администратора.
+        form_invalid: Форма заполнена неправильно. Пожалуйста, исправьте ошибки, и попробуйте ещё раз.
       help:
         we_need_email: Нам нужен ваш E-mail для подтверждения регистрации и полной убеждённости в том, что вы не бот.
         enter_your_passwd_for_confirm: (введите ваш пароль для подтверждения изменений)
@@ -51,6 +53,8 @@ ru:
     product:
       rails: Ruby on Rails
       ruby: Ruby
+    footnotes:
+      in_other_langs_known_as: ! 'Названия в других языках:'
   activerecord:
     attributes:
       user:
@@ -86,3 +90,4 @@ ru:
     menulink:
       self: ссылку в главное меню
       creation: Создание ссылки в главном меню
+      edition: Редактирование ссылки в главном меню

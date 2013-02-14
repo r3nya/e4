@@ -14,8 +14,28 @@ class Admin::MenulinksController < ApplicationController
     if @menulink.save
       redirect_to admin_menulinks_path
     else
-      flash.now[:error] = t 'common.messages.errors.form_common'
+      flash.now[:error] = t 'common.messages.errors.invalid_form'
       render 'new'
     end
+  end
+
+  def edit
+    @menulink = Menulink.find(params[:id])
+  end
+
+  def update
+    @menulink = Menulink.find(params[:id])
+    if @menulink.update_attributes(params[:menulink])
+      redirect_to admin_menulinks_path
+    else
+      flash.now[:error] = t 'common.messages.errors.form_invalid'
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @menulink = Menulink.find(params[:id])
+    @menulink.destroy
+    redirect_to admin_menulinks_path
   end
 end

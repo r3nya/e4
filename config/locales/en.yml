@@ -25,6 +25,7 @@ en:
         self: 
       update: 
       add: 
+      destroy: 
     footer:
       footer_html: © 2014 %{team}. <br>Powered on Rails. <a href='http://delta-zet.com'>Delta-Zet LLC</a> production.
       email_signature_html: 
@@ -32,6 +33,7 @@ en:
       errors:
         no_avaliable_menulinks: 
         no_users: 
+        form_invalid: 
       help:
         we_need_email: 
         enter_your_passwd_for_confirm: 
@@ -51,6 +53,8 @@ en:
     product:
       rails: 
       ruby: 
+    footnotes:
+      in_other_langs_known_as: 
   activerecord:
     attributes:
       user:
@@ -86,3 +90,4 @@ en:
     menulink:
       self: 
       creation: 
+      edition: 
