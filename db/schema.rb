@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130213193921) do
+ActiveRecord::Schema.define(:version => 20130214160928) do
 
   create_table "menulinks", :force => true do |t|
     t.string   "title_en",   :default => "NEED ENGLISH TRANSLATION"
@@ -20,6 +20,15 @@ ActiveRecord::Schema.define(:version => 20130213193921) do
     t.integer  "range",      :default => 0
     t.datetime "created_at",                                         :null => false
     t.datetime "updated_at",                                         :null => false
+  end
+
+  create_table "metaforums", :force => true do |t|
+    t.string   "title_en"
+    t.string   "title_ru"
+    t.string   "desc_ru"
+    t.string   "desc_en"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|
