@@ -2,6 +2,7 @@ defaults: &defaults
   base_title: "Xilitra Linux"
   team_name: "Xilitra Team"
   site_name: "Xilitra Linux"
+  email_address: "noreply@xilitra.ru"
 
 development:
   <<: *defaults
