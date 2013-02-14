@@ -3,91 +3,96 @@ en:
     actions:
       login:
         forgot_passwd:
-          request: 
-        login: 
-        signin: 
+          request: Forgot your password?
+        login: Login
+        signin: Login
         reset_pass:
-          action: 
-          decline: 
-          desc: 
+          action: Password reset
+          decline: If you think that this mail delivered to you by mistake, just ignore it, please.
+          desc: Someone (looks like it's you) requested password reset for your account. For accepting this request, follow the link below.
       register:
         confirmation:
-          missed: 
-          action: 
-          congratulations: 
-          decline: 
-          retry: 
-        register: 
-        signup: 
-      request: 
-      edit: 
+          missed: Missed confirmation e-mail?
+          action: Accept registration!
+          congratulations: Congratulations! You're now registered in %{site} community! For first login and accepting registration you need to follow the link below.
+          decline: If you think that this mail delivered to you by mistake, just ignore it, please.
+          retry: Resend confirmation e-mail
+        register: Register
+        signup: Registration
+      request: Request %{obj}
+      edit: Edit %{obj}
       ban:
-        self: 
-      update: 
-      add: 
-      destroy: 
+        self: Self-extermination
+      update: Update %{obj}
+      add: Add %{obj}
+      destroy: Delete %{obj}
     footer:
       footer_html: © 2014 %{team}. <br>Powered on Rails. <a href='http://delta-zet.com'>Delta-Zet LLC</a> production.
-      email_signature_html: 
+      email_signature_html: <i>Best regards, <br>%{team}.</i>
     messages:
       errors:
-        no_avaliable_menulinks: 
-        no_users: 
-        form_invalid: 
+        no_avaliable_menulinks: Main menu contains no links
+        no_users: Looks like you've installed e4 just now or you fucked your database up (again?) ;-) Please, register your first user. Keep in mind that this user will become administrator automatically.
+        form_invalid: Form contains errors, please, fix it.
       help:
-        we_need_email: 
-        enter_your_passwd_for_confirm: 
-        keep_blank: 
-        self_ban: 
-        no_need_to_slash: 
+        we_need_email: We need your E-mail for confirming registration and for approving you're a human.
+        enter_your_passwd_for_confirm: (enter your password for confirming changes)
+        keep_blank: (keep blank to leave the same)
+        self_ban: ! 'Feeling angry? There is a link for that:'
+        no_need_to_slash: First and last slashes will be added automatically, no need to type they here
       warnings:
-        new_admin: 
-        are_you_sure: 
+        new_admin: ! '%{user} becomes new administrator!'
+        are_you_sure: Are you sure? This action cannot be reverted!
     errors:
       not_implemented:
-        desc: 
-        title: 
+        desc: This page's functions under construction. Sorry for that.
+        title: Under construction
     greetings:
-      welcome: 
-      hello: 
+      welcome: Welcome, %{user}!
+      hello: Hello, %{user}!
     product:
-      rails: 
-      ruby: 
+      rails: Ruby on Rails
+      ruby: Ruby
     footnotes:
-      in_other_langs_known_as: 
+      in_other_langs_known_as: ! 'Titles in other languages:'
   activerecord:
     attributes:
       user:
-        nick: 
-        password: 
-        password_confirmation: 
-        email: 
-        remember_me: 
-        password_restore: 
-        registration: 
+        nick: Nickname
+        password: Password
+        password_confirmation: Password confirmation
+        email: E-mail
+        remember_me: Remember me
+        password_restore: password reset
+        registration: registration
       menulink:
-        range: 
-        title: 
-        url: 
-        title_en: 
-        title_ru: 
+        range: Link range
+        title: Title
+        url: URL
+        title_en: Title on English
+        title_ru: Title on Russian
   admin:
-    interface: 
+    interface: Administrative interface
     menulinks:
-      interface: 
+      interface: Managing main menu links
+      index:
+        desc: Main menu located at the top right corner. Links respawns in it by "range", from left (highest range) to right (lowest range). Links with the same range will be placed in alphabetical order.
+        title: Managing main menu links
+    settings: Settings
+    systeminfo: System information
+    version: ! '%{product} version: %{version}'
+    welcome:
+      desc: Welcome to the administrative interface! Here is a central place for changing site settings.
+      title: Welcome to administrative interface!
+    messages:
+      keep_translations_clean: Don't forget about other languages, add translations for them in your objects!. If you cannot translate something to other language, just leave entries, becoming to that language, blank, and appopriate translator will fix them.
+    forum:
+      interface: Forum management
       index:
         desc: 
-        title: 
-    settings: 
-    systeminfo: 
-    version: 
-    welcome:
-      desc: 
-      title: 
-    messages:
-      keep_translations_clean: 
+        title: Forum management
   objects:
     menulink:
-      self: 
-      creation: 
-      edition: 
+      self: main menu link
+      creation: Main menu link creation
+      edition: Editing main menu link

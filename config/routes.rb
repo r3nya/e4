@@ -5,6 +5,7 @@ E4::Application.routes.draw do
 
   namespace :admin do
     resources :menulinks
+    resources :forum, :only => ['index']
   end
 
   # The priority is based upon order of creation:
