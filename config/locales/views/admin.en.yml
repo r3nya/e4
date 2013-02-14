@@ -1,9 +1,0 @@
-en:
-  adm_welcome: "Welcome to administrative interface!"
-  adm_welcome_desc: "Don't forget 'bout backups! ;-)"
-  adminiface: "Administrative interface"
-  rails: "Rails"
-  ruby: "Ruby"
-  settings: "Settings"
-  systeminfo: "System information"
-  version: "%{product} version: %{version}"

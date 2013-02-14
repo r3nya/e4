@@ -1,9 +1,0 @@
-en:
-  confirm_decline: "If you haven't registered on site and/or thinking that this mail delivered to you by mistake — just don't do anything. Without your action no one can activate your account."
-  confirm_email: "Congratulations! You are now registered in %{site} community! For using website you need to approve your e-mail address."
-  confirm_me: "Confirm registration!"
-  email_signature_html: "<i>Best regards, <br>%{team}</i>"
-  hello: "Hello, %{user}!"
-  passreset_decline: "If you thinking that this mail delivered to you by mistake, just don't do anything."
-  passreset_mail: "You (or somebody from your account) have requested password resetting on %{site} site. If you want to change password, use the link below:"
-  passreset_me: "Reset my password!"

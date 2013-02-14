@@ -1,8 +1,0 @@
-en:
-  activerecord:
-    attributes:
-      menulink:
-        title_en: "English title"
-        title_ru: "Russian title"
-        url: "Internal path for link"
-        range: "Range"

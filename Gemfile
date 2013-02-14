@@ -54,3 +54,8 @@ gem 'yettings'
 
 # Model translation
 gem 'rails-translate'
+
+# Localeapp
+group :development do
+  gem 'localeapp'
+end

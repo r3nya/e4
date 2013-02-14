@@ -1,4 +1,0 @@
-en:
-  newadmin: "User %{user} becomes new administrator!"
-  nouser: "Looks like you have installed e4 just now or you've fucked you database up (again?) ;-) Please, register first user for begin. Keep in mind that administrative privileges will be granted to this user automatically."
-  translations_ftw: "Don't forget to add/edit localizations in all your objects!"
