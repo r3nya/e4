@@ -1,12 +1,48 @@
-<% provide :title, t(:menulinks_index) %>
+<% provide :title, (t 'admin.menulinks.interface') %>
 <header>
-  <h3><%= t(:menulinks_index) %></h3>
+  <h3><%= t 'admin.menulinks.index.title' %></h3>
 </header>
 
 <article>
-  <p><%= t(:menulinks_description) %></p>
+  <p><%= t 'admin.menulinks.index.desc' %></p>
   <div class="rightfloat">
-    [<%= link_to t(:add_menulink), new_admin_menulink_path %>]
+    [<%= link_to (t 'common.actions.add', :obj => (t 'objects.menulink.self')), new_admin_menulink_path %>]
   </div>
   <div class="clear"></div>
+  <div class="table_container">
+    <table>
+      <thead>
+        <tr>
+          <th><%= t 'activerecord.attributes.menulink.title' %></th>
+          <th><%= t 'activerecord.attributes.menulink.url' %></th>
+          <th><%= t 'activerecord.attributes.menulink.range' %></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @menulinks.each do |mlink| %>
+          <tr>
+            <td><%= mlink.title %></td>
+            <td><%= "/#{mlink.url}/" %></td>
+            <td><%= mlink.range %></td>
+            <td><%= link_to (t 'common.actions.edit', :obj => (t 'objects.menulink.self')), edit_admin_menulink_path(mlink) %></td>
+            <td></td>
+          </tr>
+          <tr class="small">
+            <td colspan="5">
+              <p class="small">
+              <%= t 'common.footnotes.in_other_langs_known_as' %>
+              <% @localelist.each do |lc| %>
+                <% unless I18n.locale.to_s == "#{lc[0]}" %>
+                  <%= "#{lc[1]}" %> : <%= eval("mlink.title_#{lc[0]}") %>
+                <% end %>
+              <% end %>
+              </p>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </article>

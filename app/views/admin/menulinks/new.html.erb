@@ -1,16 +1,17 @@
-<% provide :title, t(:menulinks_addition) %>
+<% provide :title, (t 'objects.menulink.creation') %>
 
 <header>
-  <h4><%= t(:menulink_addition) %></h4>
+  <h4><%= t 'objects.menulink.creation' %></h4>
 </header>
 
 <article>
+  <%= render 'error_messages' %>
   <%= form_for @menulink,
         :url => {
                 :controller => :menulinks,
                 :action => :create,
         } do |f| %>
     <%= render 'menulink_form', :f => f %>
-    <button type="submit"><%= t 'add', :obj => t(:menulink_obj) %></button>
+    <button type="submit"><%= t 'common.actions.add', :obj => (t 'objects.menulink.self') %></button>
   <% end %>
 </article>

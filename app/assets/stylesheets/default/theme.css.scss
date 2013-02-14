@@ -137,6 +137,10 @@ h4 {
 
 p {
   margin: 8px 0;
+  &.small {
+    margin: 0;
+    font-size: 8pt;
+  }
 }
 
 i, em {
@@ -151,7 +155,6 @@ ul {
 b {
   font-weight: bold;
 }
-
 // Error messages
 
 .flash {
@@ -200,6 +203,14 @@ tr {
     color: $dark-gray;
     a {
       color: $dark-gray;
+    }
+  }
+  &.small {
+    min-height: 1.1em;
+    line-height: 1.1em;
+    &:hover {
+      background: $dark-gray;
+      color: $white;
     }
   }
 }

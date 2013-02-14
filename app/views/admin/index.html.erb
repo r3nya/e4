@@ -1,17 +1,17 @@
-<% provide(:title, t(:adminiface)) %>
+<% provide(:title, (t 'admin.interface')) %>
 <header>
-  <h3><%= t(:adm_welcome) %></h3>
+  <h3><%= t 'admin.welcome.title' %></h3>
 </header>
 
 <article>
-  <p><%= t(:adm_welcome_desc) %></p>
-  <h4><%= t(:systeminfo) %></h4>
+  <p><%= t 'admin.welcome.desc' %></p>
+  <h4><%= t 'admin.systeminfo' %></h4>
   <ul>
-    <li><%= t 'version', :product => t(:ruby), :version => RUBY_VERSION %></li>
-    <li><%= t 'version', :product => t(:rails), :version =>  Rails::VERSION::STRING %></li>
+    <li><%= t 'admin.version', :product => (t 'common.product.ruby'), :version => RUBY_VERSION %></li>
+    <li><%= t 'admin.version', :product => (t 'common.product.rails'), :version =>  Rails::VERSION::STRING %></li>
   </ul>
-  <h4><%= t(:settings) %></h4>
+  <h4><%= t 'admin.settings' %></h4>
   <ul>
-    <li><%= link_to t(:menulinks_index), admin_menulinks_path %></li>
+    <li><%= link_to (t 'admin.menulinks.interface'), admin_menulinks_path %></li>
   </ul>
 </article>

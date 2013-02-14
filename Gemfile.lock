@@ -102,6 +102,8 @@ GEM
       activesupport (= 3.2.12)
       bundler (~> 1.0)
       railties (= 3.2.12)
+    rails-i18n (0.7.2)
+      i18n (~> 0.5)
     rails-translate (1.0.0)
       rails (>= 3.0.0)
     railties (3.2.12)
@@ -179,6 +181,7 @@ DEPENDENCIES
   localeapp
   mailcatcher
   rails (= 3.2.12)
+  rails-i18n
   rails-translate
   rspec-rails
   sass-rails (~> 3.2.3)

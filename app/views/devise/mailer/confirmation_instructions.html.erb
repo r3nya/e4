@@ -1,9 +1,9 @@
-<p><%= t 'welcome', :user => @resource.nick %></p>
+<p><%= t 'common.greetings.welcome', :user => @resource.nick %></p>
 
-<p><%= t 'confirm_email', :site => Yetting.site_name %></p>
+<p><%= t 'common.actions.register.confirmation.congratulations', :site => Yetting.site_name %></p>
 
-<p><%= link_to t(:confirm_me), confirmation_url(@resource, :confirmation_token => @resource.confirmation_token) %></p>
+<p><%= link_to (t 'common.actions.register.confirmation.action'), confirmation_url(@resource, :confirmation_token => @resource.confirmation_token) %></p>
 
-<p><%= t(:confirm_decline) %></p>
+<p><%= (t 'common.actions.register.confirmation.decline') %></p>
 
-<p><%= t 'email_signature_html', :team => Yetting.team_name %></p>
+<p><%= t 'common.footer.email_signature_html', :team => Yetting.team_name %></p>

@@ -2,7 +2,7 @@ class Admin::MenulinksController < ApplicationController
   before_filter :admin_access
 
   def index
-    flash.now[:notice] = t(:translations_ftw)
+    flash.now[:notice] = t 'admin.messages.keep_translations_clean'
   end
 
   def new
@@ -14,6 +14,7 @@ class Admin::MenulinksController < ApplicationController
     if @menulink.save
       redirect_to admin_menulinks_path
     else
+      flash.now[:error] = t 'common.messages.errors.form_common'
       render 'new'
     end
   end

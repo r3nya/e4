@@ -35,11 +35,11 @@ class ApplicationController < ActionController::Base
     # You cannot leave yarb without admins :3
     if User.admins.empty?
       if User.first.nil?
-        flash[:error] = t(:nouser)
+        flash[:error] = t 'common.messages.errors.no_users'
         redirect_to main_app.new_user_registration_path unless request.fullpath =~ /\/users/
       else
         User.first.toggle!(:admin)
-        flash[:error] = t 'newadmin', :user => User.first.nick
+        flash[:error] = t 'common.messages.warnings.new_admin', :user => User.first.nick
       end
     end
   end
