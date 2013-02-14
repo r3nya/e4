@@ -1,0 +1,7 @@
+<% @localelist.each do |locale| %>
+  <div><%= f.label "title_#{locale[0]}".to_sym %><br>
+  <%= f.text_field "title_#{locale[0]}".to_sym %></div>
+
+  <div><%= f.label "desc_#{locale[0]}".to_sym %><br>
+  <%= f.text_field "desc_#{locale[0]}".to_sym %></div>
+<% end %>

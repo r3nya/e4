@@ -71,6 +71,13 @@ en:
         url: URL
         title_en: Title on English
         title_ru: Title on Russian
+      metaforum:
+        desc: Description
+        desc_en: Description on English
+        desc_ru: Description on Russian
+        title: Title
+        title_en: Title on English
+        title_ru: Title on Russian
   admin:
     interface: Administrative interface
     menulinks:
@@ -89,10 +96,13 @@ en:
     forum:
       interface: Forum management
       index:
-        desc: 
+        desc: Here you can edit, add or remove forum categories, and make they function as news forums.
         title: Forum management
   objects:
     menulink:
       self: main menu link
       creation: Main menu link creation
       edition: Editing main menu link
+    metaforum:
+      self: metaforum
+      creation: Creating a metaforum

@@ -6,6 +6,9 @@ E4::Application.routes.draw do
   namespace :admin do
     resources :menulinks
     resources :forum, :only => ['index']
+    namespace :forum do
+      resources :metaforums
+    end
   end
 
   # The priority is based upon order of creation:

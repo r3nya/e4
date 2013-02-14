@@ -5,4 +5,8 @@
 
 <article>
   <p><%= t 'admin.forum.index.desc' %></p>
+  <div class="rightfloat">
+    [<%= link_to (t 'common.actions.add', :obj => (t 'objects.metaforum.self')), new_admin_forum_metaforum_path %>]
+  </div>
+  <div class="clear"></div>
 </article>
