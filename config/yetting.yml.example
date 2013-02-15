@@ -3,6 +3,7 @@ defaults: &defaults
   team_name: "Xilitra Team"
   site_name: "Xilitra Linux"
   email_address: "noreply@xilitra.ru"
+  root: "static_pages#stub"
 
 development:
   <<: *defaults

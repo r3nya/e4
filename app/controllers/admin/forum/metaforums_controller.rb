@@ -10,7 +10,22 @@ class Admin::Forum::MetaforumsController < ApplicationController
     if @metaforum.save
       redirect_to admin_forum_index_path
     else
+      flash.now[:error] = t 'common.messages.errors.form_invalid'
       render 'new'
+    end
+  end
+
+  def edit
+    @metaforum = Metaforum.find(params[:id])
+  end
+
+  def update
+    @metaforum = Metaforum.find(params[:id])
+    if @metaforum.update_attributes(params[:metaforum])
+      redirect_to admin_forum_index_path
+    else
+      flash.now[:error] = t 'common.messages.errors.form_invalid'
+      render 'edit'
     end
   end
 end

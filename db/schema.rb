@@ -11,7 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130214160928) do
+ActiveRecord::Schema.define(:version => 20130215165146) do
+
+  create_table "forums", :force => true do |t|
+    t.string   "title_ru"
+    t.string   "title_en"
+    t.string   "desc_ru"
+    t.string   "desc_en"
+    t.string   "url"
+    t.integer  "range"
+    t.string   "metaforum_id"
+    t.boolean  "newsforum"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
 
   create_table "menulinks", :force => true do |t|
     t.string   "title_en",   :default => "NEED ENGLISH TRANSLATION"

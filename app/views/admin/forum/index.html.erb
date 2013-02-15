@@ -9,4 +9,43 @@
     [<%= link_to (t 'common.actions.add', :obj => (t 'objects.metaforum.self')), new_admin_forum_metaforum_path %>]
   </div>
   <div class="clear"></div>
+  <div class="table_container">
+    <% @metaforums.each do |metaforum| %>
+      <table>
+        <thead>
+          <tr>
+            <th><%= t 'activerecord.attributes.metaforum.title' %></th>
+            <th><%= t 'activerecord.attributes.metaforum.desc' %></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%= metaforum.title %></td>
+            <td><%= metaforum.desc %></td>
+            <td><%= link_to (t 'common.actions.edit', :obj => (t 'objects.metaforum.self')), edit_admin_forum_metaforum_path(metaforum) %></td>
+            <td></td>
+          </tr>
+          <tr class="small">
+            <td colspan="4">
+              <p class="small"><%= t 'common.footnotes.in_other_langs_known_as' %></p>
+              <ul>
+                <% @localelist.each do |lc| %>
+                    <% unless I18n.locale.to_s == "#{lc[0]}" %>
+                        <li><p class="small"><%= "#{lc[1]}" %>:</p>
+                          <ul>
+                            <li><p class="small"><%= t 'activerecord.attributes.metaforum.title' %>: <%= eval("metaforum.title_#{lc[0]}") %></p></li>
+                            <li><p class="small"><%= t 'activerecord.attributes.metaforum.desc' %>: <%= eval("metaforum.desc_#{lc[0]}") %></p></li>
+                          </ul>
+                        </li>
+                    <% end %>
+                <% end %>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    <% end %>
+  </div>
 </article>

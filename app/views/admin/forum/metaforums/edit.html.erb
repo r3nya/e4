@@ -1,0 +1,17 @@
+<% provide :title, (t 'objects.metaforum.edition') %>
+
+<header>
+  <h4><%= t 'objects.metaforum.edition' %></h4>
+</header>
+
+<article>
+  <%= render 'error_messages' %>
+  <%= form_for @metaforum,
+        :url => {
+                :controller => :metaforums,
+                :action => :update,
+        } do |f| %>
+    <%= render 'metaforum_form', :f => f %>
+    <button type="submit"><%= t 'common.actions.update', :obj => (t 'objects.metaforum.self') %></button>
+  <% end %>
+</article>

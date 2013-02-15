@@ -37,7 +37,7 @@
               <%= t 'common.footnotes.in_other_langs_known_as' %>
               <% @localelist.each do |lc| %>
                 <% unless I18n.locale.to_s == "#{lc[0]}" %>
-                  <%= "#{lc[1]}" %> : <%= eval("mlink.title_#{lc[0]}") %>
+                  <%= "#{lc[1]}" %>: <%= eval("mlink.title_#{lc[0]}") %>
                 <% end %>
               <% end %>
               </p>
