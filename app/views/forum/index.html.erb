@@ -10,7 +10,7 @@
     <li><%= "#{metaforum.title} — #{metaforum.desc}" %></li>
       <ul>
         <% metaforum.forums.ordered.each do |forum| %>
-          <li><p class="small"><%= link_to forum.title, forum_path(forum.url    ) %> — <%= forum.desc %></p></li>
+          <li><p class="small"><%= link_to forum.title, forum_path(forum.url) %> — <%= forum.desc %></p></li>
         <% end %>
       </ul>
   <% end %>

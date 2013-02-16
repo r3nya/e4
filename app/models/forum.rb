@@ -28,5 +28,7 @@ class Forum < ActiveRecord::Base
   validates :url, presence: true
   validates :range, presence: true
 
+  has_many :posts
+
   belongs_to :metaforum
 end
