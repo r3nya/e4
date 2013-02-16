@@ -120,3 +120,6 @@ ru:
       self: форум
       creation: Создание форума
       edition: Редактирование форума
+  forum:
+    welcome:
+      title: Форум

@@ -1,0 +1,18 @@
+<% provide(:title, (t 'forum.welcome.title')) %>
+
+<header>
+  <h3><%= t 'forum.welcome.title' %></h3>
+</header>
+
+<article>
+  <ul>
+  <% @metaforums.each do |metaforum| %>
+    <li><%= "#{metaforum.title} — #{metaforum.desc}" %></li>
+      <ul>
+        <% metaforum.forums.ordered.each do |forum| %>
+          <li><p class="small"><%= link_to forum.title, forum_path(forum.url    ) %> — <%= forum.desc %></p></li>
+        <% end %>
+      </ul>
+  <% end %>
+  </ul>
+</article>

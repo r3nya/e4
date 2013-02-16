@@ -13,6 +13,9 @@ E4::Application.routes.draw do
     end
   end
 
+  resources :forum, :only => ['index']
+  match 'forum/:url' => 'forum#view', :as => :forum
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
