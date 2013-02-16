@@ -1,0 +1,17 @@
+<% provide :title, (t 'objects.forum.creation') %>
+
+<header>
+  <h4><%= t 'objects.forum.creation' %></h4>
+</header>
+
+<article>
+  <%= render 'error_messages' %>
+  <%= form_for @forum,
+        :url => {
+                :controller => :forums,
+                :action => :create,
+        } do |f| %>
+    <%= render 'forum_form', :f => f %>
+    <button type="submit"><%= t 'common.actions.add', :obj => (t 'objects.forum.self') %></button>
+  <% end %>
+</article>

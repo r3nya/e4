@@ -78,6 +78,15 @@ en:
         title: Title
         title_en: Title on English
         title_ru: Title on Russian
+      forum:
+        desc: Description
+        title: Title
+        title_ru: Title on Russian
+        title_en: Title on English
+        desc_ru: Description on Russian
+        desc_en: Description on English
+        url: URL
+        range: Sorting range
   admin:
     interface: Administrative interface
     menulinks:
@@ -107,3 +116,6 @@ en:
       self: metaforum
       creation: Creating a metaforum
       edition: Edit this metaforum
+    forum:
+      self: forum
+      creation: Forum creation

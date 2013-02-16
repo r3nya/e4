@@ -44,8 +44,50 @@
               </ul>
             </td>
           </tr>
+          <tr>
+            <td colspan="4">
+            </td>
+          </tr>
         </tbody>
       </table>
+      <table>
+        <thead>
+          <tr>
+            <th><%= t 'activerecord.attributes.forum.title' %></th>
+            <th><%= t 'activerecord.attributes.forum.desc' %></th>
+            <th></th>
+            <th><%= link_to (t 'common.actions.add', :obj => (t 'objects.forum.self')), new_admin_forum_metaforum_forums_path(metaforum) %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% metaforum.forums.each do |forum| %>
+            <tr>
+              <td><%= forum.title %></td>
+              <td><%= forum.desc %></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr class="small">
+              <td colspan="4">
+                <p class="small"><%= t 'common.footnotes.in_other_langs_known_as' %></p>
+                <ul>
+                  <% @localelist.each do |lc| %>
+                      <% unless I18n.locale.to_s == "#{lc[0]}" %>
+                          <li><p class="small"><%= "#{lc[1]}" %>:</p>
+                            <ul>
+                              <li><p class="small"><%= t 'activerecord.attributes.forum.title' %>: <%= eval("forum.title_#{lc[0]}") %></p></li>
+                              <li><p class="small"><%= t 'activerecord.attributes.forum.desc' %>: <%= eval("forum.desc_#{lc[0]}") %></p></li>
+                            </ul>
+                          </li>
+                      <% end %>
+                  <% end %>
+                </ul>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+        </table>
+      <br>
     <% end %>
   </div>
 </article>

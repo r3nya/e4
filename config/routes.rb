@@ -7,7 +7,9 @@ E4::Application.routes.draw do
     resources :menulinks
     resources :forum, :only => ['index']
     namespace :forum do
-      resources :metaforums
+      resources :metaforums do
+        resource :forums
+      end
     end
   end
 

@@ -1,0 +1,17 @@
+<div><%= f.label :metaforum %><br>
+<%= collection_select(:forum, :metaforum_id, @metaforums, :id, :title) %></div>
+
+<% @localelist.each do |locale| %>
+  <div><%= f.label "title_#{locale[0]}".to_sym %><br>
+  <%= f.text_field "title_#{locale[0]}".to_sym %></div>
+
+  <div><%= f.label "desc_#{locale[0]}".to_sym %><br>
+  <%= f.text_field "desc_#{locale[0]}".to_sym %></div>
+<% end %>
+
+<div><%= f.label :url %><br>
+<%= f.text_field :url %>
+<p class="small"><%= t 'common.messages.help.no_need_to_slash' %></p></div>
+
+<div><%= f.label :range %><br>
+<%= f.number_field :range %></div>
