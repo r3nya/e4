@@ -16,6 +16,8 @@
 #
 
 class Forum < ActiveRecord::Base
+  scope :ordered, order('range DESC')
+
   attr_accessible :desc_en, :desc_ru, :metaforum_id, :newsforum, :range, :title_en, :title_ru, :url
   translate :title, :desc
 
@@ -23,6 +25,8 @@ class Forum < ActiveRecord::Base
   validates :title_ru, presence: true
   validates :desc_en, presence: true
   validates :desc_ru, presence: true
+  validates :url, presence: true
+  validates :range, presence: true
 
   belongs_to :metaforum
 end

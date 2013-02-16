@@ -8,7 +8,7 @@ E4::Application.routes.draw do
     resources :forum, :only => ['index']
     namespace :forum do
       resources :metaforums do
-        resource :forums
+        resources :forums
       end
     end
   end

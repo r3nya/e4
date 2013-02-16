@@ -6,11 +6,12 @@ class CreateForums < ActiveRecord::Migration
       t.string :desc_ru
       t.string :desc_en
       t.string :url
-      t.integer :range
+      t.integer :range, :default => '0'
       t.string :metaforum_id
       t.boolean :newsforum
 
       t.timestamps
     end
+    add_index :forums, :url, :unique => true
   end
 end

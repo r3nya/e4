@@ -5,10 +5,11 @@ class Admin::Forum::ForumsController < ApplicationController
   def new
     @metaforum = Metaforum.find(params[:metaforum_id])
     @forum = ::Forum.new()
+    @forum.metaforum = @metaforum
   end
 
   def create
-    @metaforum = Metaforum.find(params[:metaforum_id])
+    @metaforum = Metaforum.find(params[:forum][:metaforum_id])
     @forum = ::Forum.new(params[:forum])
     @forum.metaforum = @metaforum
     if @forum.save
@@ -25,7 +26,7 @@ class Admin::Forum::ForumsController < ApplicationController
   end
 
   def update
-    @metaforum = Metaforum.find(params[:metaforum_id])
+    @metaforum = Metaforum.find(params[:forum][:metaforum_id])
     @forum = ::Forum.find(params[:id])
     @forum.metaforum = @metaforum
     if @forum.update_attributes(params[:forum])

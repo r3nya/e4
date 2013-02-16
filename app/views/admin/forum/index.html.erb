@@ -55,20 +55,24 @@
           <tr>
             <th><%= t 'activerecord.attributes.forum.title' %></th>
             <th><%= t 'activerecord.attributes.forum.desc' %></th>
+            <th><%= t 'activerecord.attributes.forum.url' %></th>
+            <th><%= t 'activerecord.attributes.forum.range' %></th>
             <th></th>
-            <th><%= link_to (t 'common.actions.add', :obj => (t 'objects.forum.self')), new_admin_forum_metaforum_forums_path(metaforum) %></th>
+            <th><%= link_to (t 'common.actions.add', :obj => (t 'objects.forum.self')), new_admin_forum_metaforum_forum_path(metaforum) %></th>
           </tr>
         </thead>
         <tbody>
-          <% metaforum.forums.each do |forum| %>
+          <% metaforum.forums.ordered.each do |forum| %>
             <tr>
               <td><%= forum.title %></td>
               <td><%= forum.desc %></td>
+              <td><%= "/forum/#{forum.url}/" %></td>
+              <td class="center"><%= forum.range %></td>
               <td></td>
-              <td></td>
+              <td><%= link_to (t 'common.actions.edit', :obj => (t 'objects.forum.self')), edit_admin_forum_metaforum_forum_path(metaforum, forum) %></td>
             </tr>
             <tr class="small">
-              <td colspan="4">
+              <td colspan="6">
                 <p class="small"><%= t 'common.footnotes.in_other_langs_known_as' %></p>
                 <ul>
                   <% @localelist.each do |lc| %>

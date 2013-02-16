@@ -11,7 +11,7 @@
                 :controller => :forums,
                 :action => :update,
         } do |f| %>
-    <%= render 'metaforum_form', :f => f %>
+    <%= render 'forum_form', :f => f %>
     <button type="submit"><%= t 'common.actions.update', :obj => (t 'objects.forum.self') %></button>
   <% end %>
 </article>
