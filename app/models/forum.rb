@@ -31,4 +31,8 @@ class Forum < ActiveRecord::Base
   has_many :posts
 
   belongs_to :metaforum
+
+  def to_param
+    url
+  end
 end

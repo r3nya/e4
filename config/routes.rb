@@ -1,8 +1,8 @@
 E4::Application.routes.draw do
   devise_for :users
 
+  # Administrative interface
   resources :admin, :only => ['index']
-
   namespace :admin do
     resources :menulinks
     resources :forum, :only => ['index']
@@ -13,8 +13,11 @@ E4::Application.routes.draw do
     end
   end
 
-  resources :forum, :only => ['index']
-  match 'forum/:url' => 'forum#view', :as => :forum
+  # Forum
+  resources :forum, :only => ['index', 'show']
+  resources :forum do
+    resources :posts
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

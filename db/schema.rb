@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130215165146) do
+ActiveRecord::Schema.define(:version => 20130217120725) do
 
   create_table "forums", :force => true do |t|
     t.string   "title_ru"
@@ -42,6 +42,22 @@ ActiveRecord::Schema.define(:version => 20130215165146) do
     t.string   "desc_en"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "posts", :force => true do |t|
+    t.string   "subject_en"
+    t.string   "subject_ru"
+    t.string   "message_en"
+    t.string   "message_ru"
+    t.integer  "user_id"
+    t.integer  "forum_id"
+    t.integer  "moderator_id", :default => 1
+    t.boolean  "sticky",       :default => false
+    t.boolean  "visible",      :default => true
+    t.boolean  "commentable",  :default => true
+    t.boolean  "article",      :default => false
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
   end
 
   create_table "users", :force => true do |t|

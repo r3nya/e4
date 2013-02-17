@@ -22,12 +22,12 @@ class Admin::Forum::ForumsController < ApplicationController
 
   def edit
     @metaforum = Metaforum.find(params[:metaforum_id])
-    @forum = ::Forum.find(params[:id])
+    @forum = ::Forum.find_by_url(params[:id])
   end
 
   def update
     @metaforum = Metaforum.find(params[:forum][:metaforum_id])
-    @forum = ::Forum.find(params[:id])
+    @forum = ::Forum.find_by_url(params[:id])
     @forum.metaforum = @metaforum
     if @forum.update_attributes(params[:forum])
       redirect_to admin_forum_index_path

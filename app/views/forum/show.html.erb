@@ -1,0 +1,23 @@
+<% provide(:title, "#{(t 'forum.welcome.title')} — #{@forum.title}") %>
+
+<header>
+  <h3><%= t 'forum.welcome.title' %> — <%= @forum.title %></h3>
+</header>
+
+<article>
+  <p><%= @forum.desc %></p>
+  <div class="table_container">
+    <table>
+      <thead>
+        <tr>
+          <th><%= t 'activerecord.attributes.post.title' %></th>
+          <th><%= t 'activerecord.attributes.post.created_at' %></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+  </div>
+</article>
