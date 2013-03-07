@@ -1,0 +1,17 @@
+<% provide :title, (t 'objects.post.creation') %>
+
+<header>
+  <h4><%= t 'objects.post.creation' %></h4>
+</header>
+
+<article>
+  <%= render 'error_messages' %>
+  <%= form_for @post,
+        :url => {
+                :controller => :posts,
+                :action => :create,
+        } do |f| %>
+    <%= render 'post_form', :f => f %>
+    <button type="submit"><%= t 'common.actions.add', :obj => (t 'objects.post.self') %></button>
+  <% end %>
+</article>

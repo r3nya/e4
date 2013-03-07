@@ -94,6 +94,8 @@ en:
       post:
         created_at: Posted at
         title: Title
+        message: Message
+        subject: Subject
   admin:
     interface: Administrative interface
     menulinks:
@@ -129,6 +131,9 @@ en:
       edition: Forum editing
     password:
       changing: Change new password
+    post:
+      self: post
+      creation: Adding a message
   forum:
     welcome:
       title: Forum

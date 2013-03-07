@@ -6,17 +6,32 @@
 
 <article>
   <p><%= @forum.desc %></p>
+  <div class="rightfloat">
+    [<%= link_to (t 'common.actions.add', :obj => (t 'objects.post.self')), new_forum_post_path(@forum) %>]
+  </div>
+  <div class="clear"></div>
   <div class="table_container">
     <table>
       <thead>
         <tr>
+          <th></th>
           <th><%= t 'activerecord.attributes.post.title' %></th>
           <th><%= t 'activerecord.attributes.post.created_at' %></th>
           <th></th>
         </tr>
       </thead>
       <tbody>
-
+        <% @forum.posts.ordered.each do |post| %>
+          <tr>
+            <td class="center">
+              <% if post.sticky %>
+                S
+              <% end %>
+            </td>
+            <td><%= link_to post.subject, forum_post_path(@forum, post) %></td>
+            <td><%= l post.created_at, :format => :long %></td>
+          </tr>
+        <% end %>
       </tbody>
     </table>
   </div>

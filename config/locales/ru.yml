@@ -94,6 +94,8 @@ ru:
       post:
         created_at: Дата создания
         title: Заголовок
+        message: Сообщение
+        subject: Заголовок
   admin:
     interface: Интерфейс администратора
     menulinks:
@@ -129,6 +131,9 @@ ru:
       edition: Редактирование форума
     password:
       changing: Изменение пароля
+    post:
+      self: сообщение
+      creation: Добавление сообщения
   forum:
     welcome:
       title: Форум

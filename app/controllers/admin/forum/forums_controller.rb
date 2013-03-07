@@ -37,10 +37,6 @@ class Admin::Forum::ForumsController < ApplicationController
     end
   end
 
-  def preload_vars
-    @metaforums = Metaforum.all
-  end
-
   def destroy
     @metaforum = Metaforum.find(params[:metaforum_id])
     @forum = ::Forum.find_by_url(params[:id])
@@ -51,5 +47,9 @@ class Admin::Forum::ForumsController < ApplicationController
       flash.now[:error] = (t 'common.messages.errors.forbidden', :reason => (t 'common.messages.errors.non_empty'))
       redirect_to admin_forum_index_path
     end
+  end
+
+  def preload_vars
+    @metaforums = Metaforum.all
   end
 end

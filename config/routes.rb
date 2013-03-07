@@ -16,7 +16,8 @@ E4::Application.routes.draw do
   # Forum
   resources :forum, :only => ['index', 'show']
   resources :forum do
-    resources :posts
+    resources :posts, :path => '', :only => ['show', 'destroy']
+    resources :posts, :path => 'p', :only => ['new', 'create']
   end
 
   # The priority is based upon order of creation:
