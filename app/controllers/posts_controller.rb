@@ -19,7 +19,12 @@ class PostsController < ApplicationController
     end
   end
 
+  def show
+    @post = Post.find(params[:id])
+  end
+
   def preload_params
     @forum = Forum.find_by_url(params[:forum_id])
+    @comment = Comment.new()
   end
 end

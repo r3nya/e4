@@ -43,6 +43,7 @@ en:
         keep_blank: (keep blank to leave the same)
         self_ban: ! 'Feeling angry? There is a link for that:'
         no_need_to_slash: First and last slashes will be added automatically, no need to type they here
+        rules_reminder: Please, do not ignore forum rules. Thank you.
       warnings:
         new_admin: ! '%{user} becomes new administrator!'
         are_you_sure: Are you sure? This action cannot be reverted!
@@ -96,6 +97,8 @@ en:
         title: Title
         message: Message
         subject: Subject
+      comment:
+        body: Comment
   admin:
     interface: Administrative interface
     menulinks:
@@ -134,6 +137,14 @@ en:
     post:
       self: post
       creation: Adding a message
+    comment:
+      count:
+        other: ! '%{count} comments.'
+        zero: No comments
+        one: One comment.
+        content_item: comment
+      self: comment
+      this_is_a_reply: ! 'Reply to comment #%{to}.'
   forum:
     welcome:
       title: Forum

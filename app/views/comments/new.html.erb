@@ -1,0 +1,8 @@
+<h3><%= t 'common.actions.add', :obj => (t 'objects.comment.self') %></h3>
+
+<p><%= t 'common.messages.help.rules_reminder' %></p>
+<%= form_for @comment do |f| %>
+    <%= render 'error_messages' %>
+    <%= render 'comment_form', :f => f, :object => @comment.obj_id, :type => @comment.obj_type %>
+    <button type="submit"><%= t 'common.actions.add', :obj => (t 'objects.comment.self') %></button>
+<% end %>

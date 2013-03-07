@@ -62,3 +62,13 @@ gem 'rails-translate'
 group :development do
   gem 'localeapp'
 end
+
+
+# Markdown rendering and code syntax
+
+gem 'redcarpet'
+
+# Comments
+
+gem 'acts_as_commentable_with_threading'
+

@@ -20,6 +20,9 @@ E4::Application.routes.draw do
     resources :posts, :path => 'p', :only => ['new', 'create']
   end
 
+  # Comments
+  resources :comments
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

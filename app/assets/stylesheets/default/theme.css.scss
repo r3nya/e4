@@ -246,3 +246,34 @@ th {
   @include padding;
   min-height: 100px;
 }
+
+// =====================================================================================================================
+
+// Forum
+
+// =====================================================================================================================
+
+// Post
+
+.post {
+  @include padding;
+  @include margin;
+  @include ramochka_mikhaila;
+  background: $steel;
+}
+
+.message {
+  position: relative;
+  float: left;
+  width: 88%;
+}
+
+.avatar {
+  position: relative;
+  width: 10%;
+  float: left;
+  padding-left: 1em;
+  img {
+    @include ramochka_mikhaila;
+  }
+}

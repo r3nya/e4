@@ -1,0 +1,42 @@
+<div class="post">
+  <div>
+    <%= link_to (t 'objects.forum.self').mb_chars.capitalize.to_s, forum_index_path %> — <%= link_to @forum.title, forum_path(@forum) %>
+  </div>
+  <div class="clear"></div>
+  <div class="avatar">
+    <%= image_tag avatar_url(@post.user) %>
+  </div>
+  <div class="message">
+    <h4><%= @post.subject %></h4>
+    <%= markdown.render(@post.message).html_safe %>
+    <p><%= @post.user.nick %> // <%= l @post.created_at, :format => :long %></p>
+  </div>
+  <div class="clear"></div>
+  <%= t 'objects.comment.count', :count => @post.comment_threads.count %>
+  <div class="clear"></div>
+  <%= form_for @comment do |f| %>
+      <%= render 'comments/comment_form', :f => f, :object => @post.id, :type => 'post' %>
+      <button type="submit"><%= t 'common.actions.add', :obj  => (t 'objects.comment.self') %></button>
+  <% end %>
+</div>
+<% @post.comment_threads.each do |comment| %>
+    <div class="post">
+      <a name="<%= comment.id %>"></a>
+      <%= link_to '[#]', forum_post_path(@forum, @post, :anchor => comment.id) %>
+      <% if comment.parent %>
+          | <%= link_to (t 'objects.comment.this_is_a_reply', :to => comment.parent.id), forum_post_path(@forum, @post, :anchor => comment.parent.id) %>
+      <% end %>
+      <div class="avatar">
+        <%= image_tag avatar_url(comment.user) %>
+      </div>
+      <div class="message">
+        <%= markdown.render(comment.body).html_safe %>
+      </div>
+      <p><%= comment.user.nick %> // <%= l comment.created_at, :format => :long %></p>
+      <div class="clear"></div>
+      <%= form_for @comment do |f| %>
+          <%= render 'comments/comment_form', :f => f, :object => comment.id, :type => 'comment' %>
+          <button type="submit"><%= t 'common.actions.add', :obj  => (t 'objects.comment.self') %></button>
+      <% end %>
+    </div>
+<% end %>

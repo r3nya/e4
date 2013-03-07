@@ -19,6 +19,8 @@
 #
 
 class Post < ActiveRecord::Base
+  acts_as_commentable
+
   scope :ordered, order('sticky DESC, created_at DESC')
   # Forum post may be a news article (indicated by flag 'article').
   # Differences between forum post and news article:
