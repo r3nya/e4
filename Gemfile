@@ -72,3 +72,6 @@ gem 'redcarpet'
 
 gem 'acts_as_commentable_with_threading'
 
+# Pagination
+
+gem 'will_paginate', '~> 3.0.0'

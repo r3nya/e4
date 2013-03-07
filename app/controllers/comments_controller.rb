@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
     @comment.obj_type = params[:comment][:obj_type]
     @comment.obj_id = params[:comment][:obj_id]
     if @comment.save
-      redirect_to @comment.absolute_url(@comment.id)
+      redirect_to @comment.absolute_url
       if defined?(@threadable)
         @comment.move_to_child_of(@parent_comment)
       end

@@ -52,10 +52,13 @@ class Comment < ActiveRecord::Base
   attr_accessor :obj_type, :obj_id
 
   # Helper class method to give us absolute comment url
-  def absolute_url(and_anchor)
+  def absolute_url
     case commentable_type
       when "Post"
-        E4::Application.routes.url_helpers.forum_post_path(commentable.forum, commentable, :anchor => and_anchor)
+        E4::Application.routes.url_helpers.forum_post_path(commentable.forum, commentable, :anchor => id)
     end
   end
+
+  # Pagination
+  self.per_page = 10
 end

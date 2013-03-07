@@ -19,10 +19,10 @@
       <button type="submit"><%= t 'common.actions.add', :obj  => (t 'objects.comment.self') %></button>
   <% end %>
 </div>
-<% @post.comment_threads.each do |comment| %>
+<% @commenteries.each do |comment| %>
     <div class="post">
       <a name="<%= comment.id %>"></a>
-      <%= link_to '[#]', forum_post_path(@forum, @post, :anchor => comment.id) %>
+      <%= link_to '[#]', comment.absolute_url %>
       <% if comment.parent %>
           | <%= link_to (t 'objects.comment.this_is_a_reply', :to => comment.parent.id), forum_post_path(@forum, @post, :anchor => comment.parent.id) %>
       <% end %>
@@ -40,3 +40,4 @@
       <% end %>
     </div>
 <% end %>
+<%= will_paginate @commenteries %>

@@ -150,3 +150,5 @@ ru:
   forum:
     welcome:
       title: Форум
+  next_label: ! '>'
+  previous_label: <

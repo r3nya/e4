@@ -148,3 +148,5 @@ en:
   forum:
     welcome:
       title: Forum
+  next_label: ! '>'
+  previous_label: <
