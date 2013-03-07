@@ -34,6 +34,9 @@ en:
         no_avaliable_menulinks: Main menu contains no links
         no_users: Looks like you've installed e4 just now or you fucked your database up (again?) ;-) Please, register your first user. Keep in mind that this user will become administrator automatically.
         form_invalid: Form contains errors, please, fix it.
+        self_banned: user banned by himself
+        forbidden: This action isn't acceptable for this object, because %{reason}.
+        non_empty: this object isn't empty
       help:
         we_need_email: We need your E-mail for confirming registration and for approving you're a human.
         enter_your_passwd_for_confirm: (enter your password for confirming changes)
@@ -65,6 +68,7 @@ en:
         remember_me: Remember me
         password_restore: password reset
         registration: registration
+        new_password: Enter your new password
       menulink:
         range: Link range
         title: Title
@@ -87,6 +91,9 @@ en:
         desc_en: Description on English
         url: URL
         range: Sorting range
+      post:
+        created_at: Posted at
+        title: Title
   admin:
     interface: Administrative interface
     menulinks:
@@ -120,6 +127,8 @@ en:
       self: forum
       creation: Forum creation
       edition: Forum editing
+    password:
+      changing: Change new password
   forum:
     welcome:
       title: Forum

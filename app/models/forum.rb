@@ -35,4 +35,11 @@ class Forum < ActiveRecord::Base
   def to_param
     url
   end
+
+  def destroy
+    # You can't delete any non-empty object, motherfucker
+    unless posts.count != 0
+      super
+    end
+  end
 end

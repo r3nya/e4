@@ -21,4 +21,11 @@ class Metaforum < ActiveRecord::Base
   validates :desc_ru, presence: true
 
   has_many :forums
+
+  def destroy
+    # You can't delete any non-empty object, motherfucker
+    unless forums.count != 0
+      super
+    end
+  end
 end

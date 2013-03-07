@@ -44,9 +44,10 @@ class User < ActiveRecord::Base
 
   validates :nick, presence: true
 
-  def self_ban
+  def destroy
+    # You can't destroy user by Rails methods. Don't wipe users from db without REALLY URGENT REASON, please.
     update_attribute(:banned_at, Time.current)
-    update_attribute(:ban_reason, t(:self_destroy))
+    update_attribute(:ban_reason, (I18n.t 'common.messages.errors.self_banned'))
     update_attribute(:banned_by_id, read_attribute(:id))
     update_attribute(:is_active, false)
   end

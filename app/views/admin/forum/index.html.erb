@@ -25,7 +25,7 @@
             <td><%= metaforum.title %></td>
             <td><%= metaforum.desc %></td>
             <td><%= link_to (t 'common.actions.edit', :obj => (t 'objects.metaforum.self')), edit_admin_forum_metaforum_path(metaforum) %></td>
-            <td></td>
+            <td><%= link_to (t 'common.actions.destroy', :obj => (t 'objects.metaforum.self')), admin_forum_metaforum_path(metaforum), :method => :delete %></td>
           </tr>
           <tr class="small">
             <td colspan="4">
@@ -68,8 +68,8 @@
               <td><%= forum.desc %></td>
               <td><%= "/forum/#{forum.url}/" %></td>
               <td class="center"><%= forum.range %></td>
-              <td></td>
               <td><%= link_to (t 'common.actions.edit', :obj => (t 'objects.forum.self')), edit_admin_forum_metaforum_forum_path(metaforum, forum) %></td>
+              <td><%= link_to (t 'common.actions.destroy', :obj => (t 'objects.forum.self')), admin_forum_metaforum_forum_path(metaforum, forum), :method => :delete %></td>
             </tr>
             <tr class="small">
               <td colspan="6">
