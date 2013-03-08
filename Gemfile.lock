@@ -175,7 +175,6 @@ GEM
       rack (>= 1.0)
     will_paginate (3.0.4)
     ya2yaml (0.31)
-    yettings (0.1.1)
 
 PLATFORMS
   ruby
@@ -199,4 +198,3 @@ DEPENDENCIES
   therubyracer
   uglifier (>= 1.0.3)
   will_paginate (~> 3.0.0)
-  yettings

@@ -23,6 +23,6 @@
       <%= link_to (t 'common.actions.login.login'), new_user_session_path %>
     <% end %>
   </div>
-  <%= link_to Yetting.site_name, root_path, :class => 'logo' %>
+  <%= link_to Personalisation.find(3).data, root_path, :class => 'logo' %>
   <div class="clear"></div>
 </header>
