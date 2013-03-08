@@ -23,10 +23,6 @@ Populate database with:
 
     rake db:migrate
 
-and edit personalisation (such as site name, footer...) // In future it will be stored in db
-
-   cd config/ && cp yetting.yml.example yetting.yml && $EDITOR yetting.yml
-
 For registering users (and testing all users functional), in another terminal run
 
     mailcatcher
