@@ -1,6 +1,6 @@
 ### e4
 
-[![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/fat0troll/e4)
+[![Code Climate](https://codeclimate.com/github/fat0troll/e4.png)](https://codeclimate.com/github/fat0troll/e4)
 
 **e4** is a site engine, builded on Ruby on Rails force, replacement of Yads2 — old site engine inspired by linux.org.ru, used on xilitra.ru in 2012-2013.
 
