@@ -1,0 +1,39 @@
+<% provide :title, (t 'admin.personalisation.interface') %>
+<header>
+  <h3><%= t 'admin.personalisation.index.title' %></h3>
+</header>
+
+<article>
+  <p><%= t 'admin.personalisation.index.desc_html' %></p>
+  <div class="clear"></div>
+  <div class="table_container">
+    <table>
+      <thead>
+        <tr>
+          <th><%= t 'activerecord.attributes.personalisation.data' %></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @personalisations.each do |personalisation| %>
+          <tr>
+            <td><%= personalisation.data %></td>
+            <td><%= link_to (t 'common.actions.edit', :obj => (t 'objects.personalisation.self')), edit_admin_personalisation_path(personalisation) %></td>
+          </tr>
+          <tr class="small">
+            <td colspan="2">
+              <p class="small">
+              <%= t 'common.footnotes.in_other_langs_known_as' %>
+              <% @localelist.each do |lc| %>
+                <% unless I18n.locale.to_s == "#{lc[0]}" %>
+                  <%= "#{lc[1]}" %>: <%= eval("personalisation.data_#{lc[0]}") %>
+                <% end %>
+              <% end %>
+              </p>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</article>

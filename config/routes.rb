@@ -5,7 +5,7 @@ E4::Application.routes.draw do
   resources :admin, :only => ['index']
   namespace :admin do
     resources :menulinks
-    resources :personalisation, :only => ['index']
+    resources :personalisation, :only => ['index', 'edit', 'update']
     resources :forum, :only => ['index']
     namespace :forum do
       resources :metaforums do
@@ -73,7 +73,7 @@ E4::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  if ActiveRecord::Base.connection.table_exists? 'personalisation'
+  if ActiveRecord::Base.connection.table_exists? 'personalisations'
     root :to => Personalisation.find(5).data
   else
     root :to => 'static_pages#stub'

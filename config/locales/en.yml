@@ -99,6 +99,10 @@ en:
         subject: Subject
       comment:
         body: Comment
+      personalisation:
+        data: Value
+        data_ru: Value on Russian language
+        data_en: Value on Engilsh language
   admin:
     interface: Administrative interface
     menulinks:
@@ -120,6 +124,40 @@ en:
       index:
         desc: Here you can edit, add or remove forum categories, and make they function as news forums.
         title: Forum management
+    personalisation:
+      index:
+        title: Make this site yours!
+        desc_html: ! 'In this section you can edit widely used things such as site name and email. Also you can change link to main page.</p>
+
+
+          <h4>Blocks description</h4>
+
+
+          <p>First three blocks can be edited without any fears.</p>
+
+
+          <ul>
+
+          <li>First block contains site title (used in browser title)</li>
+
+          <li>Second block contains team name (used in e-mails and footer)</li>
+
+          <li>Third block contains site name (used in logo)</li>
+
+          </ul>
+
+
+          <p>You must change next blocks only if you know what you''re doing!</p>
+
+
+          <ul>
+
+          <li>Fourth block contains e-mail adders, which will be used to send e-mails to users. Wrong value in this block will produce unavaliability of registration</li>
+
+          <li>Fifth block contains Rails-link to controller which will handle root of this site. Setting it to wrong value will make site unusable.</li>
+
+          </ul>'
+      interface: Site personalisation
   objects:
     menulink:
       self: main menu link
@@ -146,6 +184,8 @@ en:
         content_item: comment
       self: comment
       this_is_a_reply: ! 'Reply to comment #%{to}.'
+    personalisation:
+      self: personalisation string
   forum:
     welcome:
       title: Forum

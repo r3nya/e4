@@ -12,4 +12,8 @@
 class Personalisation < ActiveRecord::Base
   translate :data
   attr_accessible :data_en, :data_ru
+
+  def destroy
+    puts "You can't destroy Personalisation object"
+  end
 end
