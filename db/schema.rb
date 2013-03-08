@@ -36,12 +36,14 @@ ActiveRecord::Schema.define(:version => 20130308191004) do
     t.string   "desc_ru"
     t.string   "desc_en"
     t.string   "url"
-    t.integer  "range"
+    t.integer  "range",        :default => 0
     t.string   "metaforum_id"
     t.boolean  "newsforum"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
   end
+
+  add_index "forums", ["url"], :name => "index_forums_on_url", :unique => true
 
   create_table "menulinks", :force => true do |t|
     t.string   "title_en",   :default => "NEED ENGLISH TRANSLATION"

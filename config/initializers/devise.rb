@@ -4,7 +4,11 @@ Devise.setup do |config|
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class with default "from" parameter.
-  config.mailer_sender = Personalisation.find(4).data
+  if ActiveRecord::Base.connection.table_exists? 'personalisation'
+    config.mailer_sender = Personalisation.find(4).data
+  else
+    config.mailer_sender = 'none@existing.yet'
+  end
 
   # Configure the class responsible to send e-mails.
   # config.mailer = "Devise::Mailer"
