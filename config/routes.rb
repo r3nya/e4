@@ -5,6 +5,7 @@ E4::Application.routes.draw do
   resources :admin, :only => ['index']
   namespace :admin do
     resources :menulinks
+    resources :personalisation, :only => ['index']
     resources :forum, :only => ['index']
     namespace :forum do
       resources :metaforums do
@@ -72,7 +73,7 @@ E4::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => Yetting.root
+  root :to => Personalisation.find(5).data
 
   # See how all your routes lay out with "rake routes"
 

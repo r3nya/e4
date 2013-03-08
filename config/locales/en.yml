@@ -106,6 +106,7 @@ en:
       index:
         desc: Main menu located at the top right corner. Links respawns in it by "range", from left (highest range) to right (lowest range). Links with the same range will be placed in alphabetical order.
         title: Managing main menu links
+      personalisation: Site personalisation settings
     settings: Settings
     systeminfo: System information
     version: ! '%{product} version: %{version}'
@@ -148,5 +149,5 @@ en:
   forum:
     welcome:
       title: Forum
-  next_label: ! '>'
-  previous_label: <
+  next_label: next
+  previous_label: previous

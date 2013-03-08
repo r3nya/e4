@@ -33,8 +33,5 @@ public/uploads/*
 # Macos
 .DS_Store
 
-# Yettings personalisation
-config/yetting.yml
-
 # Localeapp
 .localeapp

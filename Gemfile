@@ -52,9 +52,6 @@ gem 'devise-i18n'
 # Rails i18n
 gem 'rails-i18n'
 
-# Yettings (fucking personalisation :))
-gem 'yettings'
-
 # Model translation
 gem 'rails-translate'
 

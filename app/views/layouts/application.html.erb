@@ -25,7 +25,7 @@
 <hr>
 <footer>
   <div class="footer_text center">
-    <%= t 'common.footer.footer_html', :team => Yetting.team_name %>
+    <%= t 'common.footer.footer_html', :team => Personalisation.find(2).data %>
     <p>
       Avaliable languages
       <% @localelist[0..-2].each do |locale| %>
