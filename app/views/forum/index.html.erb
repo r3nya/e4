@@ -6,45 +6,35 @@
 
 <article>
     <div class="forum_container">
-        <div class="forum">
-            Forum name
-        </div>
-        <div class="forum_posts">
-            Posts
-        </div>
-        <div class="forum_last_topic">
-            Last topic
-        </div>
-        <div class="clear"></div>
         <% @metaforums.each do |metaforum| %>
             <div class="metaforum">
                 <%= "#{metaforum.title}" %><br/ >
                 <%= "#{metaforum.desc}" %>
-            </div>
-            <% metaforum.forums.ordered.each do |forum| %>
-                <div class="forum_data">
-                    <div class="forum">
-                        <span class="forum_name"><%= link_to forum.title, forum_path(forum.url) %></span><br />
-                        <span class="forum_description"><%= forum.desc %></span>
-                    </div>
-                    <div class="forum_posts">
-                        <%= forum.posts.count %>
-                    </div>
-                    <% if forum.posts.count > 0 %>
-                        <div class="forum_last_topic">
-                            <img class="forum_index_avatar" src="<%= avatar_url(forum.posts.last.user) %>" />
-                            <a href="<%= forum_post_path(forum, forum.posts.last) %>"><%= forum.posts.last.subject %></a><br />
-                            <%= forum.posts.last.user.nick %><br />
-                            <%= l forum.posts.last.created_at, :format => :long %>
+                <% metaforum.forums.ordered.each do |forum| %>
+                    <div class="forum_data">
+                        <div class="forum">
+                            <span class="forum_name"><%= link_to forum.title, forum_path(forum.url) %></span><br />
+                            <span class="forum_description"><%= forum.desc %></span>
                         </div>
-                    <% else %>
-                        <div class="forum_last_topic">
-                            Nothing here
+                        <div class="forum_posts">
+                            <%= forum.posts.count %>
                         </div>
-                    <% end %>
-                </div>
+                        <% if forum.posts.count > 0 %>
+                            <div class="forum_last_topic">
+                                <img class="forum_index_avatar" src="<%= avatar_url(forum.posts.last.user) %>" />
+                                <a href="<%= forum.posts.last.comment_threads.last.absolute_url %>"><%= forum.posts.last.subject %></a><br />
+                                <%= forum.posts.last.user.nick %><br />
+                                <%= l forum.posts.last.comment_threads.last.created_at, :format => :long %>
+                            </div>
+                        <% else %>
+                            <div class="forum_last_topic">
+                                Nothing here
+                            </div>
+                        <% end %>
+                    </div>
                 <div class="clear"></div>
             <% end %>
+            </div>
         <div class="clear"></div>
         <% end %>
     </div>
