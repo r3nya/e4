@@ -70,6 +70,7 @@ en:
         password_restore: password reset
         registration: registration
         new_password: Enter your new password
+        group: Group
       menulink:
         range: Link range
         title: Title
@@ -176,6 +177,8 @@ en:
     post:
       self: post
       creation: Adding a message
+      last: Last post
+      plural: Messages
     comment:
       count:
         other: ! '%{count} comments.'
@@ -184,9 +187,12 @@ en:
         content_item: comment
       self: comment
       this_is_a_reply: ! 'Reply to comment #%{to}.'
+      plural: Comments
     personalisation:
       self: personalisation string
       edition: Personalisation value editing
+    thanks:
+      counted: Thanks
   forum:
     welcome:
       title: Forum

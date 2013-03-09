@@ -8,7 +8,7 @@
     <div class="forum_container">
         <% @metaforums.each do |metaforum| %>
             <div class="metaforum">
-                <%= "#{metaforum.title}" %><br/ >
+                <%= "#{metaforum.title}" %><br>
                 <%= "#{metaforum.desc}" %>
                 <% metaforum.forums.ordered.each do |forum| %>
                     <div class="forum_data">

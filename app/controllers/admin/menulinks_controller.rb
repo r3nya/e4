@@ -28,7 +28,7 @@ class Admin::MenulinksController < ApplicationController
     if @menulink.update_attributes(params[:menulink])
       redirect_to admin_menulinks_path
     else
-      flash.now[:error] = t 'common.messages.errors.form_invalid'
+      form_invalid
       render 'edit'
     end
   end

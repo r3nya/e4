@@ -70,6 +70,7 @@ ru:
         password_restore: восстановление пароля
         registration: регистрацию
         new_password: Введите новый пароль
+        group: Группа
       menulink:
         range: ! '"Вес" ссылки'
         title: Заголовок
@@ -176,6 +177,8 @@ ru:
     post:
       self: сообщение
       creation: Добавление сообщения
+      last: Последний пост
+      plural: Сообщений
     comment:
       count:
         zero: Нет комментариев
@@ -186,9 +189,12 @@ ru:
         content_item: комментарий
       self: комментарий
       this_is_a_reply: ! 'Ответ на комментарий #%{to}.'
+      plural: Комментариев
     personalisation:
       self: строку персонализации
       edition: Редактирование строки персонализации
+    thanks:
+      counted: Благодарностей
   forum:
     welcome:
       title: Форум
