@@ -39,6 +39,8 @@ en:
         self_banned: user banned by himself
         forbidden: This action isn't acceptable for this object, because %{reason}.
         non_empty: this object isn't empty
+        no_access: You can't get access because %[reason}.
+        not_admin: you're not an administrator
       help:
         we_need_email: We need your E-mail for confirming registration and for approving you're a human.
         enter_your_passwd_for_confirm: (enter your password for confirming changes)
@@ -100,6 +102,11 @@ en:
         title: Title
         message: Message
         subject: Subject
+        message_en: Article on English
+        message_ru: Article on Russian
+        subject_en: Header on English
+        subject_ru: Subject on Russian
+        updated_at: Last change
       comment:
         body: Comment
       personalisation:
@@ -197,8 +204,13 @@ en:
       counted: Thanks
     newsforum:
       self: news forum
+    article:
+      self: article
   forum:
     welcome:
       title: Forum
   next_label: next
   previous_label: previous
+  newslenta:
+    welcome:
+      title: News

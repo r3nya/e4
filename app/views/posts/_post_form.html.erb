@@ -1,5 +1,11 @@
 <% if @forum.newsforum %>
+    <% @localelist.each do |locale| %>
+        <div><%= f.label "subject_#{locale[0]}".to_sym %><br>
+          <%= f.text_field "subject_#{locale[0]}".to_sym %></div>
 
+        <div><%= f.label "message_#{locale[0]}".to_sym %><br>
+          <%= f.text_area "message_#{locale[0]}".to_sym %></div>
+    <% end %>
 <% else %>
 <div><%= f.label :subject %><br>
 <%= f.text_field :subject_en %></div>

@@ -6,7 +6,12 @@ class ApplicationController < ActionController::Base
 
   def admin_access
     unless current_user.try(:admin?)
-      redirect_to root_path
+      if session[:previous_url].nil?
+        redirect_to root_path
+      else
+        redirect_to session[:previous_url]
+      end
+      flash[:error] = t 'common.messages.errors.no_access', :reason => (t 'common.messages.errors.not_admin')
     end
   end
 

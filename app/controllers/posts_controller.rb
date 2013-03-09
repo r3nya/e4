@@ -4,6 +4,9 @@ class PostsController < ApplicationController
 
 
   def new
+    if @forum.newsforum
+      admin_access
+    end
     @post = Post.new()
   end
 

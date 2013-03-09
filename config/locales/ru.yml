@@ -39,6 +39,8 @@ ru:
         self_banned: пользователь самозабанился
         forbidden: Действие над объектом невозможно, потому что %{reason}.
         non_empty: объект не пуст
+        no_access: Вы не можете получить доступ, так как %{reason}.
+        not_admin: вы не администратор
       help:
         we_need_email: Нам нужен ваш E-mail для подтверждения регистрации и полной убеждённости в том, что вы не бот.
         enter_your_passwd_for_confirm: (введите ваш пароль для подтверждения изменений)
@@ -100,6 +102,11 @@ ru:
         title: Заголовок
         message: Сообщение
         subject: Заголовок
+        message_en: Новость на английском языке
+        message_ru: Новость на русском языке
+        subject_en: Заголовок на английском языке
+        subject_ru: Заголовок на русском языке
+        updated_at: Последнее изменение
       comment:
         body: Комментарий
       personalisation:
@@ -199,8 +206,13 @@ ru:
       counted: Благодарностей
     newsforum:
       self: новостную ленту
+    article:
+      self: новость
   forum:
     welcome:
       title: Форум
   next_label: следующая
   previous_label: предыдущая
+  newslenta:
+    welcome:
+      title: Новости

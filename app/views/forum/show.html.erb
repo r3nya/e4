@@ -7,7 +7,13 @@
 <article>
     <p><%= @forum.desc %></p>
     <div class="rightfloat add_new_post">
+      <% if @forum.newsforum %>
+        <% if @user.admin %>
+          <%= link_to (t 'common.actions.add', :obj => (t 'objects.article.self')), new_forum_post_path(@forum) %>
+        <% end %>
+      <% else %>
         <%= link_to (t 'common.actions.add', :obj => (t 'objects.post.self')), new_forum_post_path(@forum) %>
+      <% end %>
     </div>
     <div class="clear"></div>
     <div class="posts_list">

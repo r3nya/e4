@@ -22,6 +22,9 @@ E4::Application.routes.draw do
     resources :posts, :path => 'p', :only => ['new', 'create']
   end
 
+  # Lenta
+  resources :news, :only => ['index']
+
   # Comments
   resources :comments
 
