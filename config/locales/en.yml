@@ -26,11 +26,7 @@ en:
       update: Update %{obj}
       add: Add %{obj}
       destroy: Delete %{obj}
-<<<<<<< HEAD
       enable: Enable %{obj}
-=======
-      enable: 
->>>>>>> 968176566e9813ca8a8abe4a70d6afa74ae42421
       disable: Disable %{obj}
     footer:
       footer_html: © 2014 %{team}. <br>Powered on Rails. <a href='http://delta-zet.com'>Delta-Zet LLC</a> production.
