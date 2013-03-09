@@ -12,12 +12,15 @@
     <p><%= @post.user.nick %> // <%= l @post.created_at, :format => :long %></p>
   </div>
   <div class="clear"></div>
-  <%= t 'objects.comment.count', :count => @post.comment_threads.count %>
+  <%= t 'objects.comment.count', :count => @post.comment_threads.count %> |
+  <a class="response-to-message-button"><%= (t 'common.actions.add', :obj => (t 'objects.comment.self')) %></a>
+  <div class="response-to-message">
+    <%= form_for @comment do |f| %>
+        <%= render 'comments/comment_form', :f => f, :object => @post.id, :type => 'post' %>
+        <button type="submit"><%= t 'common.actions.add', :obj  => (t 'objects.comment.self') %></button>
+    <% end %>
+  </div>
   <div class="clear"></div>
-  <%= form_for @comment do |f| %>
-      <%= render 'comments/comment_form', :f => f, :object => @post.id, :type => 'post' %>
-      <button type="submit"><%= t 'common.actions.add', :obj  => (t 'objects.comment.self') %></button>
-  <% end %>
 </div>
 <% @commenteries.each do |comment| %>
     <div class="post">
@@ -33,11 +36,14 @@
         <%= markdown.render(comment.body).html_safe %>
       </div>
       <p><%= comment.user.nick %> // <%= l comment.created_at, :format => :long %></p>
-      <div class="clear"></div>
+      <a class="response-to-message-button"><%= (t 'common.actions.add', :obj => (t 'objects.comment.self')) %></a>
+      <div class="response-to-message">
       <%= form_for @comment do |f| %>
           <%= render 'comments/comment_form', :f => f, :object => comment.id, :type => 'comment' %>
           <button type="submit"><%= t 'common.actions.add', :obj  => (t 'objects.comment.self') %></button>
       <% end %>
+      </div>
+      <div class="clear"></div>
     </div>
 <% end %>
 <%= will_paginate @commenteries %>
