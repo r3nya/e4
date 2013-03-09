@@ -54,10 +54,12 @@
       <table>
         <thead>
           <tr>
+            <th></th>
             <th><%= t 'activerecord.attributes.forum.title' %></th>
             <th><%= t 'activerecord.attributes.forum.desc' %></th>
             <th><%= t 'activerecord.attributes.forum.url' %></th>
             <th><%= t 'activerecord.attributes.forum.range' %></th>
+            <th></th>
             <th></th>
             <th><%= link_to (t 'common.actions.add', :obj => (t 'objects.forum.self')), new_admin_forum_metaforum_forum_path(metaforum) %></th>
           </tr>
@@ -65,15 +67,27 @@
         <tbody>
           <% metaforum.forums.ordered.each do |forum| %>
             <tr>
+              <td>
+                <% if forum.newsforum %>
+                  N
+                <% end %>
+              </td>
               <td><%= forum.title %></td>
               <td><%= forum.desc %></td>
               <td><%= "/forum/#{forum.url}/" %></td>
               <td class="center"><%= forum.range %></td>
+              <td>
+                <% if forum.newsforum %>
+                    <%= link_to (t 'common.actions.disable', :obj => (t 'objects.newsforum.self')), admin_forum_metaforum_toggle_newsforum_path(metaforum, forum) %>
+                <% else %>
+                  <%= link_to (t 'common.actions.enable', :obj => (t 'objects.newsforum.self')), admin_forum_metaforum_toggle_newsforum_path(metaforum, forum) %>
+                <% end %>
+              </td>
               <td><%= link_to (t 'common.actions.edit', :obj => (t 'objects.forum.self')), edit_admin_forum_metaforum_forum_path(metaforum, forum) %></td>
               <td><%= link_to (t 'common.actions.destroy', :obj => (t 'objects.forum.self')), admin_forum_metaforum_forum_path(metaforum, forum), :method => :delete %></td>
             </tr>
             <tr class="small">
-              <td colspan="6">
+              <td colspan="7">
                 <p class="small"><%= t 'common.footnotes.in_other_langs_known_as' %></p>
                 <ul>
                   <% @localelist.each do |lc| %>

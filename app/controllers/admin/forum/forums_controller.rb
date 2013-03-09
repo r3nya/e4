@@ -37,6 +37,12 @@ class Admin::Forum::ForumsController < ApplicationController
     end
   end
 
+  def toggle_nf
+    @forum = ::Forum.find_by_url(params[:id])
+    @forum.toggle!(:newsforum)
+    redirect_to admin_forum_index_path
+  end
+
   def destroy
     @metaforum = Metaforum.find(params[:metaforum_id])
     @forum = ::Forum.find_by_url(params[:id])

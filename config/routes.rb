@@ -10,6 +10,7 @@ E4::Application.routes.draw do
     namespace :forum do
       resources :metaforums do
         resources :forums
+        match 'forums/:id/newsforum/toggle' => 'forums#toggle_nf', :as => :toggle_newsforum
       end
     end
   end

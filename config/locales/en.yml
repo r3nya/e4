@@ -26,6 +26,8 @@ en:
       update: Update %{obj}
       add: Add %{obj}
       destroy: Delete %{obj}
+      enable: Enable %{obj}
+      disable: Disable %{obj}
     footer:
       footer_html: © 2014 %{team}. <br>Powered on Rails. <a href='http://delta-zet.com'>Delta-Zet LLC</a> production.
       email_signature_html: <i>Best regards, <br>%{team}.</i>
@@ -193,6 +195,8 @@ en:
       edition: Personalisation value editing
     thanks:
       counted: Thanks
+    newsforum:
+      self: news forum
   forum:
     welcome:
       title: Forum

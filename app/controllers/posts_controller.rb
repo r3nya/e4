@@ -11,6 +11,9 @@ class PostsController < ApplicationController
     @post = Post.new(params[:post])
     @post.user = current_user
     @post.forum = @forum
+    if @forum.newsforum
+      @post.article = true
+    end
     if @post.save
       redirect_to forum_post_path(@forum, @post)
     else
