@@ -183,9 +183,9 @@ ru:
       count:
         zero: Нет комментариев
         other: ! 'Комментариев: %{count}'
-        one: ! '%{count} комментарий.'
-        few: ! '%{count} комментария.'
-        many: ! '%{count} комментариев.'
+        one: ! '%{count} комментарий'
+        few: ! '%{count} комментария'
+        many: ! '%{count} комментариев'
         content_item: комментарий
       self: комментарий
       this_is_a_reply: ! 'Ответ на комментарий #%{to}.'

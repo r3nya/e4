@@ -181,9 +181,9 @@ en:
       plural: Messages
     comment:
       count:
-        other: ! '%{count} comments.'
+        other: ! '%{count} comments'
         zero: No comments
-        one: One comment.
+        one: One comment
         content_item: comment
       self: comment
       this_is_a_reply: ! 'Reply to comment #%{to}.'

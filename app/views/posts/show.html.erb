@@ -10,10 +10,8 @@
       <%= image_tag avatar_url(@post.user) %>
     </div>
     <div class="user_data">
-          <%= (t 'activerecord.attributes.user.group').mb_chars.capitalize.to_s %>: {groupname}<br>
           <%= (t 'objects.comment.plural').mb_chars.capitalize.to_s %>: <%= @user.comments.count %><br>
           <%= (t 'objects.post.plural').mb_chars.capitalize.to_s %>: <%= @user.posts.count %><br>
-          <%= (t 'objects.thanks.counted').mb_chars.capitalize.to_s %>: {thankscount}<br>
     </div>
   </div>
   <div class="message">
@@ -51,10 +49,8 @@
           <%= image_tag avatar_url(comment.user) %>
         </div>
         <div class="user_data">
-          <%= (t 'activerecord.attributes.user.group').mb_chars.capitalize.to_s %>: {groupname}<br>
           <%= (t 'objects.comment.plural').mb_chars.capitalize.to_s %>: <%= @user.comments.count %><br>
           <%= (t 'objects.post.plural').mb_chars.capitalize.to_s %>: <%= @user.posts.count %><br>
-          <%= (t 'objects.thanks.counted').mb_chars.capitalize.to_s %>: {thankscount}<br>
         </div>
       </div>
       <div class="message">
