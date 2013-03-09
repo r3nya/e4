@@ -26,6 +26,8 @@ ru:
       update: Обновить %{obj}
       add: Добавить %{obj}
       destroy: Удалить %{obj}
+      enable: Включить %{obj}
+      disable: Выключить %{obj}
     footer:
       footer_html: © 2014 %{team}. <br>Построено на силе Ruby on Rails. Создано <a href='http://delta-zet.com'>ООО "Дельта-Зет"</a>.
       email_signature_html: <i>С уважением, <br>%{team}.</i>
@@ -183,9 +185,9 @@ ru:
       count:
         zero: Нет комментариев
         other: ! 'Комментариев: %{count}'
-        one: ! '%{count} комментарий.'
-        few: ! '%{count} комментария.'
-        many: ! '%{count} комментариев.'
+        one: ! '%{count} комментарий'
+        few: ! '%{count} комментария'
+        many: ! '%{count} комментариев'
         content_item: комментарий
       self: комментарий
       this_is_a_reply: ! 'Ответ на комментарий #%{to}.'
@@ -195,6 +197,8 @@ ru:
       edition: Редактирование строки персонализации
     thanks:
       counted: Благодарностей
+    newsforum:
+      self: новостную ленту
   forum:
     welcome:
       title: Форум

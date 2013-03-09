@@ -21,7 +21,7 @@ time, mark, audio, video {
     margin: 0;
     padding: 0;
     border: 0;
-    font-size: 98%;
+    font-size: 100%;
     vertical-align: baseline;
 }
 // HTML5 display-role reset for older browsers
@@ -300,6 +300,61 @@ th {
 .forum_index_avatar {
     padding-top: 5px;
     width: 48px;
+    float: right;
+    padding-left: 5px;
+    @include ramochka_mikhaila
+}
+
+// Posts list
+
+.add_new_post {
+    background-color: #888;
+    padding: 3px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+.add_new_post:hover {
+    background-color: #222;
+}
+
+.posts_list {
+    border: 1px solid #000;
+}
+
+.post_title_hint {
+    float: left;
+    width: 78%;
+    background-color: #777;
+    padding: 3px;
+}
+
+.post_last_change_hint {
+    float: left;
+    width: 21%;
+    background-color: #777;
+    padding: 3px;
+    border-left: 1px solid #000;
+}
+
+.post_title {
+    float: left;
+    width: 78%;
+    padding: 3px;
+    border-top: 1px solid #000;
+}
+
+.post_last_change {
+    float: left;
+    width: 21%;
+    padding: 3px;
+    border-left: 1px solid #000;
+    border-top: 1px solid #000;
+}
+
+.post_last_change_avatar {
+    padding-top: 5px;
+    width: 38px;
     float: right;
     padding-left: 5px;
     @include ramochka_mikhaila
