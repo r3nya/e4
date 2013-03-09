@@ -82,7 +82,7 @@ class ApplicationController < ActionController::Base
       object.destroy
       redirect_to redirect
     else
-      flash.now[:error] = (t 'common.messages.errors.forbidden', :reason => reason)
+      flash[:error] = (t 'common.messages.errors.forbidden', :reason => reason)
       redirect_to redirect
     end
   end
