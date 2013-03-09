@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Play:400,700);
+
 // All-in-one style file :)
 // Divides by sections
 
@@ -19,8 +21,7 @@ time, mark, audio, video {
     margin: 0;
     padding: 0;
     border: 0;
-    font-size: 100%;
-    font: inherit;
+    font-size: 98%;
     vertical-align: baseline;
 }
 // HTML5 display-role reset for older browsers
@@ -29,6 +30,7 @@ footer, header, hgroup, menu, nav, section {
     display: block;
 }
 body {
+    font-family: Play, Sans, Verdana, Helvetica, serif;
     line-height: 1;
 }
 ol, ul {
@@ -69,7 +71,6 @@ $green: #8ae234;
 
 .clear {
   clear: both;
-  padding-bottom: 0.5em;
 }
 
 .center-block {
@@ -85,9 +86,6 @@ $green: #8ae234;
   clear: both;
 }
 
-.clear {
-  clear: both;
-}
 
 // Usable mixins
 
@@ -253,35 +251,127 @@ th {
 
 // =====================================================================================================================
 
+// Forum list
+
+.forum_container {
+    border: 1px solid #eee;
+}
+
+.metaforum {
+    background-color: #888;
+    margin-bottom: 5px;
+    border: 1px solid #000;
+}
+
+.forum_data {
+    height: 4em;
+}
+
+.forum {
+    float: left;
+    width: 59%;
+    background-color: #555;
+    margin: 0;
+    padding: 0;
+    min-height: 4em;
+    padding-left: 5px;
+}
+
+.forum_posts {
+    float: left;
+    width: 10%;
+    background-color: #555;
+    text-align: center;
+    min-height: 4em;
+    border-left: 1px solid #222;
+    border-right: 1px solid #222;
+}
+
+.forum_last_topic {
+    float: left;
+    width: 30%;
+    background-color: #555;
+    min-height: 4em;
+    padding-right: 5px;
+    text-align: right;
+}
+
+.forum_index_avatar {
+    padding-top: 5px;
+    width: 48px;
+    float: right;
+    padding-left: 5px;
+    @include ramochka_mikhaila
+}
+
 // Post
 
 .post {
-  @include padding;
-  @include margin;
-  @include ramochka_mikhaila;
+  margin: 10px;
   background: $steel;
+}
+
+.post_info {
+    float: left;
+    width: 100%;
+    background-color: #424242;
+    padding: 5px;
+    padding-right: 0;
+}
+
+p.user_name {
+    font-size: 1.3em;
+    text-align: center;
+}
+
+.user_info {
+    float: left;
+    width: 13%;
+    min-height: 220px;
+
+    background-color: #424242;
+    padding: 5px;
+}
+
+.user_data {
+    font-size: 0.8em;
+    background: #888;
+    padding: 5px;
+    border-radius: 5px;
 }
 
 .message {
   position: relative;
   float: left;
-  width: 88%;
+  width: 85%;
+  margin-left: 5px;
 }
 
 .avatar {
-  position: relative;
-  width: 10%;
-  float: left;
-  padding-left: 1em;
+  width: 100%;
+  text-align: center;
   img {
     @include ramochka_mikhaila;
   }
 }
 
 textarea {
-    width: 100%;
+    width: 98%;
     border: 1px solid #aaa;
     border-radius: 5px;
+    padding: 5px;
+}
+
+button {
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    padding: 3px;
+}
+
+.add_comment {
+    float: left;
+    width: 85%;
+    margin-left: 5px;
 }
 
 .response-to-message {

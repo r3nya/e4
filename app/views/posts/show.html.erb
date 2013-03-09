@@ -1,47 +1,73 @@
-<div class="post">
   <div>
-    <%= link_to (t 'objects.forum.self').mb_chars.capitalize.to_s, forum_index_path %> — <%= link_to @forum.title, forum_path(@forum) %>
+    <%= link_to (t 'objects.forum.self').mb_chars.capitalize.to_s, forum_index_path %> » <%= link_to @forum.title, forum_path(@forum) %> » <%= @post.subject %>
   </div>
-  <div class="clear"></div>
-  <div class="avatar">
-    <%= image_tag avatar_url(@post.user) %>
+<div class="post">
+  <div class="user_info">
+    <p class="user_name">
+      <%= @post.user.nick %>
+    </p>
+    <div class="avatar">
+      <%= image_tag avatar_url(@post.user) %>
+    </div>
+    <div class="user_data">
+          Group: {groupname}<br />
+          Posts: <%= @user.comments.count %><br />
+          Threads: <%= @user.posts.count %><br />
+          Thanks: {thankscount}<br />
+    </div>
   </div>
   <div class="message">
     <h4><%= @post.subject %></h4>
     <%= markdown.render(@post.message).html_safe %>
-    <p><%= @post.user.nick %> // <%= l @post.created_at, :format => :long %></p>
   </div>
   <div class="clear"></div>
-  <%= t 'objects.comment.count', :count => @post.comment_threads.count %> |
-  <a class="response-to-message-button"><%= (t 'common.actions.add', :obj => (t 'objects.comment.self')) %></a>
-  <div class="response-to-message">
-    <%= form_for @comment do |f| %>
-        <%= render 'comments/comment_form', :f => f, :object => @post.id, :type => 'post' %>
-        <button type="submit"><%= t 'common.actions.add', :obj  => (t 'objects.comment.self') %></button>
-    <% end %>
+  <div class="post_info">
+    <%= l @post.created_at, :format => :long %> |
+    <%= t 'objects.comment.count', :count => @post.comment_threads.count %> |
+    <a class="response-to-message-button"><%= (t 'common.actions.add', :obj => (t 'objects.comment.self')) %></a>
+    <div class="response-to-message">
+      <%= form_for @comment do |f| %>
+          <%= render 'comments/comment_form', :f => f, :object => @post.id, :type => 'post' %>
+          <button type="submit"><%= t 'common.actions.add', :obj  => (t 'objects.comment.self') %></button>
+      <% end %>
+    </div>
   </div>
   <div class="clear"></div>
 </div>
 <% @commenteries.each do |comment| %>
     <div class="post">
       <a name="<%= comment.id %>"></a>
-      <%= link_to '[#]', comment.absolute_url %>
-      <% if comment.parent %>
+      <div class="post_info">
+      <%= l comment.created_at, :format => :long %> | <%= link_to '[#]', comment.absolute_url %>
+        <% if comment.parent %>
           | <%= link_to (t 'objects.comment.this_is_a_reply', :to => comment.parent.id), forum_post_path(@forum, @post, :anchor => comment.parent.id) %>
-      <% end %>
-      <div class="avatar">
-        <%= image_tag avatar_url(comment.user) %>
+        <% end %>
+      </div>
+      <div class="user_info">
+      <p class="user_name">
+        <%= comment.user.nick %>
+      </p>
+        <div class="avatar">
+          <%= image_tag avatar_url(comment.user) %>
+        </div>
+        <div class="user_data">
+          Group: {groupname}<br />
+          Posts: <%= @user.comments.count %><br />
+          Threads: <%= @user.posts.count %><br />
+          Thanks: {thankscount}<br />
+        </div>
       </div>
       <div class="message">
         <%= markdown.render(comment.body).html_safe %>
       </div>
-      <p><%= comment.user.nick %> // <%= l comment.created_at, :format => :long %></p>
-      <a class="response-to-message-button"><%= (t 'common.actions.add', :obj => (t 'objects.comment.self')) %></a>
-      <div class="response-to-message">
-      <%= form_for @comment do |f| %>
+      <div class="add_comment">
+        <a class="response-to-message-button"><%= (t 'common.actions.add', :obj => (t 'objects.comment.self')) %></a>
+        <div class="response-to-message">
+        <%= form_for @comment do |f| %>
           <%= render 'comments/comment_form', :f => f, :object => comment.id, :type => 'comment' %>
           <button type="submit"><%= t 'common.actions.add', :obj  => (t 'objects.comment.self') %></button>
       <% end %>
+      </div>
       </div>
       <div class="clear"></div>
     </div>
