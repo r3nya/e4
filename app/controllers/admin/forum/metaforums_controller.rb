@@ -10,7 +10,7 @@ class Admin::Forum::MetaforumsController < ApplicationController
     if @metaforum.save
       redirect_to admin_forum_index_path
     else
-      flash.now[:error] = t 'common.messages.errors.form_invalid'
+      form_invalid
       render 'new'
     end
   end

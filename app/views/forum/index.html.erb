@@ -7,18 +7,18 @@
 <article>
     <div class="forum_container">
         <div class="forum">
-            Forum name
+            <%= (t 'objects.forum.self').mb_chars.capitalize.to_s %>
         </div>
         <div class="forum_posts">
-            Posts
+            <%= t 'objects.post.plural' %>
         </div>
         <div class="forum_last_topic">
-            Last topic
+            <%= t 'objects.post.last' %>
         </div>
         <div class="clear"></div>
         <% @metaforums.each do |metaforum| %>
             <div class="metaforum">
-                <%= "#{metaforum.title}" %><br/ >
+                <%= "#{metaforum.title}" %><br>
                 <%= "#{metaforum.desc}" %>
             </div>
             <% metaforum.forums.ordered.each do |forum| %>

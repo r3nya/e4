@@ -68,4 +68,9 @@ class ApplicationController < ActionController::Base
       I18n.default_locale
     end
   end
+
+  # Messages functions
+  def form_invalid
+    flash.now[:error] = t 'common.messages.errors.form_invalid'
+  end
 end
