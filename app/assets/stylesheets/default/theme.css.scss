@@ -117,12 +117,14 @@ body {
 
 a {
     transition: color 0.3s linear 0s;
+    -webkit-transition: color 0.3s linear 0s;
     color: #aaa;
     text-decoration: none;
 }
 
 a:hover {
     transition: color 0.3s linear 0s;
+    -webkit-transition: color 0.3s linear 0s;
     color: #2399cc;
 }
 
@@ -213,12 +215,14 @@ div.field_with_errors {
 
 .siteheader a {
     transition: color 0.3s, text-shadow 0.3s linear 0s;
+    -webkit-transition: color 0.3s, text-shadow 0.3s linear 0s;
     color: #aaa;
     text-shadow:         0px 0px 5px rgba(0, 0, 0, 0.8);
 }
 
 .siteheader a:hover {
     transition: color 0.3s, text-shadow 0.3s linear 0s;
+    -webkit-transition: color 0.3s, text-shadow 0.3s linear 0s;
     color: #47bbff;
     text-shadow:         0px 0px 5px rgba(200, 200, 200, 0.8);
 }
@@ -244,6 +248,7 @@ div.field_with_errors {
 .header_link:hover {
     /*border-bottom: 2px solid #47bbff;
     transition: border 0.5s linear 0s;
+    -webkit-transition: border 0.5s linear 0s;
     color: white;*/
 }
 
@@ -281,12 +286,14 @@ div.field_with_errors {
 
 .forum_container a {
     transition: color 0.3s, text-shadow 0.3s linear 0s;
+    -webkit-transition: color 0.3s, text-shadow 0.3s linear 0s;
     color: #aaa;
-    text-shadow:         0px 0px 5px rgba(0, 0, 0, 0.8);
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
 }
 
 .forum_container a:hover {
     transition: color 0.3s, text-shadow 0.3s linear 0s;
+    -webkit-transition: color 0.3s, text-shadow 0.3s linear 0s;
     color: #47bbff;
     text-shadow:         0px 0px 5px rgba(200, 200, 200, 0.8);
 }
@@ -369,12 +376,14 @@ div.field_with_errors {
 
 .posts_list a {
     transition: color 0.3s, text-shadow 0.3s linear 0s;
+    -webkit-transition: color 0.3s, text-shadow 0.3s linear 0s;
     color: #aaa;
     text-shadow:         0px 0px 5px rgba(0, 0, 0, 0.8);
 }
 
 .posts_list a:hover {
     transition: color 0.3s, text-shadow 0.3s linear 0s;
+    -webkit-transition: color 0.3s, text-shadow 0.3s linear 0s;
     color: #47bbff;
     text-shadow:         0px 0px 5px rgba(200, 200, 200, 0.8);
 }
@@ -436,12 +445,14 @@ div.field_with_errors {
 
 .post a {
     transition: color 0.3s, text-shadow 0.3s linear 0s;
+    -webkit-transition: color 0.3s, text-shadow 0.3s linear 0s;
     color: #aaa;
     text-shadow:         0px 0px 5px rgba(0, 0, 0, 0.8);
 }
 
 .post a:hover {
     transition: color 0.3s, text-shadow 0.3s linear 0s;
+    -webkit-transition: color 0.3s, text-shadow 0.3s linear 0s;
     color: #47bbff;
     text-shadow:         0px 0px 5px rgba(200, 200, 200, 0.8);
 }
