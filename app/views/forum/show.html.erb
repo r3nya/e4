@@ -1,38 +1,39 @@
 <% provide(:title, "#{(t 'forum.welcome.title')} — #{@forum.title}") %>
 
 <header>
-  <h3><%= t 'forum.welcome.title' %> — <%= @forum.title %></h3>
+    <h3><%= t 'forum.welcome.title' %> — <%= @forum.title %></h3>
 </header>
 
 <article>
-  <p><%= @forum.desc %></p>
-  <div class="rightfloat">
-    [<%= link_to (t 'common.actions.add', :obj => (t 'objects.post.self')), new_forum_post_path(@forum) %>]
-  </div>
-  <div class="clear"></div>
-  <div class="table_container">
-    <table>
-      <thead>
-        <tr>
-          <th></th>
-          <th><%= t 'activerecord.attributes.post.title' %></th>
-          <th><%= t 'activerecord.attributes.post.created_at' %></th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
+    <p><%= @forum.desc %></p>
+    <div class="rightfloat add_new_post">
+        <%= link_to (t 'common.actions.add', :obj => (t 'objects.post.self')), new_forum_post_path(@forum) %>
+    </div>
+    <div class="clear"></div>
+    <div class="posts_list">
+        <div class="post_title_hint">
+            <%= t 'activerecord.attributes.post.title' %>
+        </div>
+        <!-- <div class="post_createdat_hint">
+            <%= t 'activerecord.attributes.post.created_at' %>
+        </div>-->
+        <div class="post_last_change_hint">
+            Last change
+        </div>
+        <div class="clear"></div>
         <% @forum.posts.ordered.each do |post| %>
-          <tr>
-            <td class="center">
-              <% if post.sticky %>
-                S
-              <% end %>
-            </td>
-            <td><%= link_to post.subject, forum_post_path(@forum, post) %></td>
-            <td><%= l post.created_at, :format => :long %></td>
-          </tr>
+            <div class="post_title">
+                <% if post.sticky %>
+                    S
+                <% end %>
+                <%= link_to post.subject, forum_post_path(@forum, post) %>
+            </div>
+            <div class="post_last_change">
+                <img class="post_last_change_avatar" src="<%= avatar_url(post.user) %>" />
+                <%= post.user.nick %><br />
+                <%= l post.created_at, :format => :long %>
+            </div>
         <% end %>
-      </tbody>
-    </table>
-  </div>
+        <div class="clear"></div>
+    </div>
 </article>
