@@ -104,8 +104,8 @@ $green: #8ae234;
 // General theming
 
 body {
-  background-color: #ddd;
-  color: black;
+  background-color: #333;
+  color: white;
   font-size: 1em;
   padding-left: 4px;
   padding-right: 4px;
@@ -116,8 +116,14 @@ body {
 // Links
 
 a {
-  color: #4747ff;
-  text-decoration: none;
+    transition: color 0.3s linear 0s;
+    color: #aaa;
+    text-decoration: none;
+}
+
+a:hover {
+    transition: color 0.3s linear 0s;
+    color: #2399cc;
 }
 
 // Typography
@@ -243,6 +249,10 @@ div.field_with_errors {
 
 
 // Footer
+.footer_text {
+    font-size: 75%;
+}
+
 
 // Content
 
@@ -259,14 +269,38 @@ div.field_with_errors {
 
 // Forum list
 
+.forum_p {
+    line-height: 1;
+    margin: 0;
+    margin-top: 2px;
+    padding: 1px;
+}
+
 .forum_container {
 }
 
+.forum_container a {
+    transition: color 0.3s, text-shadow 0.3s linear 0s;
+    color: #aaa;
+    text-shadow:         0px 0px 5px rgba(0, 0, 0, 0.8);
+}
+
+.forum_container a:hover {
+    transition: color 0.3s, text-shadow 0.3s linear 0s;
+    color: #47bbff;
+    text-shadow:         0px 0px 5px rgba(200, 200, 200, 0.8);
+}
+
 .metaforum {
-    background-color: #888;
+    background-color: #767676;
+    color: white;
     margin-bottom: 5px;
-    border: 1px solid #000;
+    border: 1px solid #666;
     padding: 5px;
+    border-radius: 4px;
+    -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
+    -moz-box-shadow:    0px 0px 5px rgba(0, 0, 0, 0.8);
+    box-shadow:         0px 0px 5px rgba(0, 0, 0, 0.8);
 }
 
 .forum_data {
@@ -299,6 +333,7 @@ div.field_with_errors {
     width: 30%;
     background-color: #555;
     min-height: 4em;
+    max-height: 4em;
     padding-right: 5px;
     text-align: right;
 }
@@ -314,18 +349,34 @@ div.field_with_errors {
 // Posts list
 
 .add_new_post {
-    background-color: #888;
-    padding: 3px;
+    background-color: #555;
+    padding: 5px;
     margin-bottom: 5px;
     border-radius: 5px;
 }
 
-.add_new_post:hover {
-    background-color: #222;
-}
 
 .posts_list {
-    border: 1px solid #000;
+    border: 1px solid #666;
+    border-radius: 4px;
+    -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
+    -moz-box-shadow:    0px 0px 5px rgba(0, 0, 0, 0.8);
+    box-shadow:         0px 0px 5px rgba(0, 0, 0, 0.8);
+    background-color: #767676;
+    color: white;
+    padding: 5px;
+}
+
+.posts_list a {
+    transition: color 0.3s, text-shadow 0.3s linear 0s;
+    color: #aaa;
+    text-shadow:         0px 0px 5px rgba(0, 0, 0, 0.8);
+}
+
+.posts_list a:hover {
+    transition: color 0.3s, text-shadow 0.3s linear 0s;
+    color: #47bbff;
+    text-shadow:         0px 0px 5px rgba(200, 200, 200, 0.8);
 }
 
 .post_title_hint {
@@ -340,22 +391,26 @@ div.field_with_errors {
     width: 21%;
     background-color: #777;
     padding: 3px;
-    border-left: 1px solid #000;
+    border-left: 1px solid #666;
 }
 
 .post_title {
     float: left;
     width: 78%;
     padding: 3px;
-    border-top: 1px solid #000;
+    border-top: 1px solid #666;
+    background-color: #555;
+    height: 2.7em;
 }
 
 .post_last_change {
     float: left;
     width: 21%;
     padding: 3px;
-    border-left: 1px solid #000;
-    border-top: 1px solid #000;
+    border-left: 1px solid #666;
+    border-top: 1px solid #666;
+    background-color: #555;
+    height: 2.7em;
 }
 
 .post_last_change_avatar {
@@ -369,13 +424,32 @@ div.field_with_errors {
 // Post
 
 .post {
-  margin: 10px;
-  background: $steel;
+    border: 1px solid #666;
+    border-radius: 4px;
+    -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
+    -moz-box-shadow:    0px 0px 5px rgba(0, 0, 0, 0.8);
+    box-shadow:         0px 0px 5px rgba(0, 0, 0, 0.8);
+    background-color: #424242;
+    color: white;
+    margin-top: 5px;
 }
+
+.post a {
+    transition: color 0.3s, text-shadow 0.3s linear 0s;
+    color: #aaa;
+    text-shadow:         0px 0px 5px rgba(0, 0, 0, 0.8);
+}
+
+.post a:hover {
+    transition: color 0.3s, text-shadow 0.3s linear 0s;
+    color: #47bbff;
+    text-shadow:         0px 0px 5px rgba(200, 200, 200, 0.8);
+}
+
 
 .post_info {
     float: left;
-    width: 100%;
+    width: 99%;
     background-color: #424242;
     padding: 5px;
     padding-right: 0;
@@ -397,7 +471,7 @@ p.user_name {
 
 .user_data {
     font-size: 0.8em;
-    background: #888;
+    background: #555;
     padding: 5px;
     border-radius: 5px;
 }

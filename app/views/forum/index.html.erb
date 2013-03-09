@@ -8,13 +8,13 @@
     <div class="forum_container">
         <% @metaforums.each do |metaforum| %>
             <div class="metaforum">
-                <%= "#{metaforum.title}" %><br>
-                <%= "#{metaforum.desc}" %>
+                <p class="forum_p"><%= "#{metaforum.title}" %></p>
+                <p class="forum_p"><%= "#{metaforum.desc}" %></p>
                 <% metaforum.forums.ordered.each do |forum| %>
                     <div class="forum_data">
                         <div class="forum">
-                            <span class="forum_name"><%= link_to forum.title, forum_path(forum.url) %></span><br />
-                            <span class="forum_description"><%= forum.desc %></span>
+                            <p class="forum_p"><span class="forum_name"><%= link_to forum.title, forum_path(forum.url) %></span></p>
+                            <p class="forum_p"><span class="forum_description"><%= forum.desc %></span></p>
                         </div>
                         <div class="forum_posts">
                             <%= forum.posts.count %>
@@ -27,16 +27,17 @@
                           <div class="forum_last_topic">
                             <img class="forum_index_avatar" src="<%= avatar_url(forum.posts.last.user) %>">
                             <% if forum.posts.last.comment_threads.empty? %>
-                              <%= link_to forum.posts.last.subject, forum_post_path(forum, forum.posts.last) %>
+                              <p class="forum_p"><%= link_to forum.posts.last.subject, forum_post_path(forum, forum.posts.last) %></p>
                             <% else %>
-                              <%= link_to forum.posts.last.subject, forum.posts.last.comment_threads.last.absolute_url %>
+                              <p class="forum_p"><%= link_to forum.posts.last.subject, forum.posts.last.comment_threads.last.absolute_url %></p>
                             <% end %>
-                            <%= forum.posts.last.user.nick %><br>
+                            <p class="forum_p"><%= forum.posts.last.user.nick %></p>
                             <% if forum.posts.last.comment_threads.empty? %>
                                 <%= l forum.posts.last.created_at, :format => :long %>
                             <% else %>
                                 <%= l forum.posts.last.comment_threads.last.created_at, :format => :long %>
                             <% end %>
+                            </p>
                           </div>
                         <% end %>
                     </div>

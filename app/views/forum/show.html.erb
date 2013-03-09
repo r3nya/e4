@@ -36,8 +36,8 @@
             </div>
             <div class="post_last_change">
                 <img class="post_last_change_avatar" src="<%= avatar_url(post.user) %>" />
-                <%= post.user.nick %><br />
-                <%= l post.created_at, :format => :long %>
+                <p class="forum_p"><%= post.user.nick %></p>
+                <p class="forum_p"><%= l post.created_at, :format => :long %></p>
             </div>
         <% end %>
         <div class="clear"></div>
