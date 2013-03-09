@@ -19,17 +19,25 @@
                         <div class="forum_posts">
                             <%= forum.posts.count %>
                         </div>
-                        <% if forum.posts.count > 0 %>
-                            <div class="forum_last_topic">
-                                <img class="forum_index_avatar" src="<%= avatar_url(forum.posts.last.user) %>" />
-                                <a href="<%= forum.posts.last.comment_threads.last.absolute_url %>"><%= forum.posts.last.subject %></a><br />
-                                <%= forum.posts.last.user.nick %><br />
-                                <%= l forum.posts.last.comment_threads.last.created_at, :format => :long %>
-                            </div>
+                        <% if forum.posts.empty? %>
+                          <div class="forum_last_topic">
+                            Nothing here
+                          </div>
                         <% else %>
-                            <div class="forum_last_topic">
-                                Nothing here
-                            </div>
+                          <div class="forum_last_topic">
+                            <img class="forum_index_avatar" src="<%= avatar_url(forum.posts.last.user) %>">
+                            <% if forum.posts.last.comment_threads.empty? %>
+                              <%= link_to forum.posts.last.subject, forum_post_path(forum, forum.posts.last) %>
+                            <% else %>
+                              <%= link_to forum.posts.last.subject, forum.posts.last.comment_threads.last.absolute_url %>
+                            <% end %>
+                            <%= forum.posts.last.user.nick %><br>
+                            <% if forum.posts.last.comment_threads.empty? %>
+                                <%= l forum.posts.last.created_at, :format => :long %>
+                            <% else %>
+                                <%= l forum.posts.last.comment_threads.last.created_at, :format => :long %>
+                            <% end %>
+                          </div>
                         <% end %>
                     </div>
                 <div class="clear"></div>
