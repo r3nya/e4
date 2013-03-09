@@ -188,6 +188,7 @@ ru:
       this_is_a_reply: ! 'Ответ на комментарий #%{to}.'
     personalisation:
       self: строку персонализации
+      edition: Редактирование строки персонализации
   forum:
     welcome:
       title: Форум

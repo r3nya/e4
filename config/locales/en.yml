@@ -186,6 +186,7 @@ en:
       this_is_a_reply: ! 'Reply to comment #%{to}.'
     personalisation:
       self: personalisation string
+      edition: Personalisation value editing
   forum:
     welcome:
       title: Forum

@@ -1,0 +1,17 @@
+<% provide :title, (t 'objects.personalisation.edition') %>
+
+<header>
+  <h4><%= t 'objects.personalisation.edition' %></h4>
+</header>
+
+<article>
+  <%= render 'error_messages' %>
+  <%= form_for @personalisation,
+        :url => {
+                :controller => :personalisation,
+                :action => :update,
+        } do |f| %>
+    <%= render 'personalisation_form', :f => f %>
+    <button type="submit"><%= t 'common.actions.edit', :obj => (t 'objects.personalisation.self') %></button>
+  <% end %>
+</article>

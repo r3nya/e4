@@ -44,6 +44,9 @@ class User < ActiveRecord::Base
 
   validates :nick, presence: true
 
+  has_many :comments
+  has_many :posts
+
   def destroy
     # You can't destroy user by Rails methods. Don't wipe users from db without REALLY URGENT REASON, please.
     update_attribute(:banned_at, Time.current)
