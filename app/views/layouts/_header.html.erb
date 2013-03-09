@@ -1,28 +1,42 @@
 <header class="siteheader">
-  <div class="menu rightfloat">
-    <% if @menulinks.empty? %>
-      <%= t 'common.messages.errors.no_avaliable_menulinks' %>
-    <% else %>
-      <% @menulinks[0..-2].each do |link| %>
-        <%= link_to link.title, "/#{link.url}/" %> |
-      <% end %>
-      <%= link_to @menulinks.last.title, "/#{@menulinks.last.url}/" %>
-    <% end %>
-  </div>
-  <div class="userlinks rightfloat">
-    <% if user_signed_in? %>
-      <%= t 'common.greetings.welcome', :user => @user.nick %>
-        <%= @user.id %>
-      <%= link_to "[X]", destroy_user_session_path, :method => :delete %> |
-      <% if current_user.admin? %>
-         <%= link_to (t 'admin.interface'), admin_index_path %> |
-      <% end %>
-      <%= link_to (t 'common.actions.edit', :obj => (t 'activerecord.attributes.user.registration')), edit_user_registration_path %>
-    <% else %>
-      <%= link_to (t 'common.actions.register.register'), new_user_registration_path %> |
-      <%= link_to (t 'common.actions.login.login'), new_user_session_path %>
-    <% end %>
-  </div>
-  <%= link_to Personalisation.find(3).data, root_path, :class => 'logo' %>
-  <div class="clear"></div>
+    <div class="menu rightfloat">
+        <% if @menulinks.empty? %>
+            <%= t 'common.messages.errors.no_avaliable_menulinks' %>
+        <% else %>
+            <% @menulinks[0..-2].each do |link| %>
+                <div class="header_link">
+                    <%= link_to link.title, "/#{link.url}/" %>
+                </div>
+        <% end %>
+        <div class="header_link">
+            <%= link_to @menulinks.last.title, "/#{@menulinks.last.url}/" %>
+        </div>
+        <% end %>
+    </div>
+    <div class="userlinks rightfloat">
+        <% if user_signed_in? %>
+            <%= t 'common.greetings.welcome', :user => @user.nick %>
+            <%= @user.id %>
+            <div class="header_link">
+                <%= link_to "[X]", destroy_user_session_path, :method => :delete %>
+            </div>
+            <% if current_user.admin? %>
+                <div class="header_link">
+                    <%= link_to (t 'admin.interface'), admin_index_path %>
+                </div>
+            <% end %>
+            <div class="header_link">
+                <%= link_to (t 'common.actions.edit', :obj => (t 'activerecord.attributes.user.registration')), edit_user_registration_path %>
+            </div>
+        <% else %>
+            <div class="header_link">
+                <%= link_to (t 'common.actions.register.register'), new_user_registration_path %>
+            </div>
+            <div class="header_link">
+                <%= link_to (t 'common.actions.login.login'), new_user_session_path %>
+            </div>
+        <% end %>
+    </div>
+    <%= link_to Personalisation.find(3).data, root_path, :class => 'logo' %>
+    <div class="clear"></div>
 </header>

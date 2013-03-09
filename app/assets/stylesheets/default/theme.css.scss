@@ -104,8 +104,8 @@ $green: #8ae234;
 // General theming
 
 body {
-  background-color: $dark-gray;
-  color: $white;
+  background-color: #ddd;
+  color: black;
   font-size: 1em;
   padding-left: 4px;
   padding-right: 4px;
@@ -116,7 +116,7 @@ body {
 // Links
 
 a {
-  color: $yellow;
+  color: #4747ff;
   text-decoration: none;
 }
 
@@ -185,46 +185,36 @@ div.field_with_errors {
   padding: 0;
 }
 
-// Tables
-
-table {
-  width: 92%;
-  margin-left: 4%;
-  border: 1px solid $gray;
-}
-
-tr {
-  min-height: 2.2em;
-  line-height: 2.2em;
-  &:hover {
-    background: $gray;
-    color: $dark-gray;
-    a {
-      color: $dark-gray;
-    }
-  }
-  &.small {
-    min-height: 1.1em;
-    line-height: 1.1em;
-    &:hover {
-      background: $dark-gray;
-      color: $white;
-    }
-  }
-}
-
-th {
-  background: $gray;
-  color: $dark-gray;
-}
-
 // =====================================================================================================================
 
 // Header
 
 .siteheader {
-  position: relative;
-  padding-bottom: 0.2em;
+    position: relative;
+    padding-bottom: 0.2em;
+    background-color: #424242;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    padding-right: 10px;
+    -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
+    -moz-box-shadow:    0px 0px 5px rgba(0, 0, 0, 0.8);
+    box-shadow:         0px 0px 5px rgba(0, 0, 0, 0.8);
+    margin-top: -8px;
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.siteheader a {
+    transition: color 0.3s, text-shadow 0.3s linear 0s;
+    color: #aaa;
+    text-shadow:         0px 0px 5px rgba(0, 0, 0, 0.8);
+}
+
+.siteheader a:hover {
+    transition: color 0.3s, text-shadow 0.3s linear 0s;
+    color: #47bbff;
+    text-shadow:         0px 0px 5px rgba(200, 200, 200, 0.8);
 }
 
 .logo {
@@ -235,6 +225,22 @@ th {
   text-align: center;
   font-weight: bold;
 }
+
+.header_link {
+    float: right;
+    margin-right: 5px;
+    margin-left: 5px;
+    /*border-bottom: 2px solid #ddd;
+    color: #aaa;
+    transition: border 0.5s linear 0s;*/
+}
+
+.header_link:hover {
+    /*border-bottom: 2px solid #47bbff;
+    transition: border 0.5s linear 0s;
+    color: white;*/
+}
+
 
 // Footer
 
