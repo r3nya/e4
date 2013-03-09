@@ -31,12 +31,6 @@ class Admin::Forum::MetaforumsController < ApplicationController
 
   def destroy
     @metaforum = Metaforum.find(params[:id])
-    if @metaforum.forums.count == 0
-      @metaforum.destroy
-      redirect_to admin_forum_index_path
-    else
-      flash.now[:error] = (t 'common.messages.errors.forbidden', :reason => (t 'common.messages.errors.non_empty'))
-      redirect_to admin_forum_index_path
-    end
+    save_destroy(@metaforum.forums.count, 0, @metaforum, admin_forum_index_path, (t 'common.messages.errors.non_empty'))
   end
 end

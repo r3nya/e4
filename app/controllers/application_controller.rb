@@ -73,4 +73,17 @@ class ApplicationController < ActionController::Base
   def form_invalid
     flash.now[:error] = t 'common.messages.errors.form_invalid'
   end
+
+  # Save destroy
+  # If condition == condition_value, object will be destroyed, and user will be redirected to redirect.
+  # If not, user will be redirected but message with reason will appear
+  def save_destroy(condition, condition_value, object, redirect, reason)
+    if condition == condition_value
+      object.destroy
+      redirect_to redirect
+    else
+      flash.now[:error] = (t 'common.messages.errors.forbidden', :reason => reason)
+      redirect_to redirect
+    end
+  end
 end
