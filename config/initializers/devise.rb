@@ -5,7 +5,11 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class with default "from" parameter.
   if ActiveRecord::Base.connection.table_exists? 'personalisations'
-    config.mailer_sender = Personalisation.find(4).data
+    if Personalisation.exists?(4)
+      config.mailer_sender = Personalisation.find(4).data
+    else
+      config.mailer_sender = 'execute_rake@db.seed'
+    end
   else
     config.mailer_sender = 'none@existing.yet'
   end

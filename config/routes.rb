@@ -78,7 +78,11 @@ E4::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   if ActiveRecord::Base.connection.table_exists? 'personalisations'
-    root :to => Personalisation.find(5).data
+    if Personalisation.exists?(5)
+      root :to => Personalisation.find(5).data
+    else
+      root :to => 'static_pages#stub'
+    end
   else
     root :to => 'static_pages#stub'
   end
