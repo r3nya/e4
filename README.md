@@ -21,7 +21,7 @@ e4 installation for development && testing is very simple. Checkout this git, go
 This command installs all dependencies for development and testing.
 Populate database with:
 
-    rake db:migrate
+    rake db:migrate && rake db:seed
 
 For registering users (and testing all users functional), in another terminal run
 
