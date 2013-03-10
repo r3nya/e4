@@ -5,30 +5,22 @@
 </header>
 
 <article>
-  <div class="posts_list">
-    <div class="post_title_hint">
-      <%= t 'activerecord.attributes.post.title' %>
-    </div>
-    <!-- <div class="post_createdat_hint">
-            <%= t 'activerecord.attributes.post.created_at' %>
-        </div>-->
-    <div class="post_last_change_hint">
-      <%= t 'activerecord.attributes.post.updated_at' %>
-    </div>
-    <div class="clear"></div>
     <% @news.each do |post| %>
-        <div class="post_title">
-          <% if post.sticky %>
-              S
-          <% end %>
-          <%= link_to post.subject, forum_post_path(post.forum, post) %>
+    <div class="news_item">
+        <div class="news_item_header">
+            <%= link_to post.subject, forum_post_path(post.forum, post) %>
         </div>
-        <div class="post_last_change">
-          <img class="post_last_change_avatar" src="<%= avatar_url(post.user) %>" />
-          <%= post.user.nick %><br />
-          <%= l post.created_at, :format => :long %>
+        <div class="news_item_created">
+            <%= l post.created_at, :format => :long %>
         </div>
-    <% end %>
+        <div class="clear"></div>
+        <div class="news_item_text">
+            <%= post.message %>
+        </div>
+        <div class="news_item_info">
+            <a href="<%= forum_post_path(post.forum, post) %>">Comments: <%= post.comment_threads.count %></a>
+        </div>
+    </div>
     <div class="clear"></div>
-  </div>
+    <% end %>
 </article>
