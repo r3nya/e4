@@ -13,6 +13,9 @@
           <%= (t 'objects.comment.plural').mb_chars.capitalize.to_s %>: <%= @user.comments.count %><br>
           <%= (t 'objects.post.plural').mb_chars.capitalize.to_s %>: <%= @user.posts.count %><br>
     </div>
+    <div class="post_actions">
+        {EDIT} {DELETE} {HIDE}
+    </div>
   </div>
   <div class="message">
     <h4><%= @post.subject %></h4>
@@ -35,12 +38,18 @@
 <% @commenteries.each do |comment| %>
     <div class="post">
       <a name="<%= comment.id %>"></a>
-      <div class="post_info">
-      <%= l comment.created_at, :format => :long %> | <%= link_to '[#]', comment.absolute_url %>
-        <% if comment.parent %>
-          | <%= link_to (t 'objects.comment.this_is_a_reply', :to => comment.parent.id), forum_post_path(@forum, @post, :anchor => comment.parent.id) %>
-        <% end %>
+      <div class="post_upper">
+        <div class="post_info">
+            <%= l comment.created_at, :format => :long %> | <%= link_to '[#]', comment.absolute_url %>
+            <% if comment.parent %>
+            | <%= link_to (t 'objects.comment.this_is_a_reply', :to => comment.parent.id), forum_post_path(@forum, @post, :anchor => comment.parent.id) %>
+            <% end %>
+        </div>
+        <div class="post_actions">
+            {EDIT} {DELETE} {HIDE}
+        </div>
       </div>
+      <div class="clear"></div>
       <div class="user_info">
       <p class="user_name">
         <%= comment.user.nick %>
