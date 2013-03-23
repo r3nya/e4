@@ -1,0 +1,10 @@
+<% @localelist.each do |locale| %>
+    <div><%= f.label "title_#{locale[0]}".to_sym %><br>
+      <%= f.text_field "title_#{locale[0]}".to_sym %></div>
+
+    <div><%= f.label "content_#{locale[0]}".to_sym %><br>
+      <%= f.text_area "content_#{locale[0]}".to_sym %></div>
+<% end %>
+
+<div><%= f.label :uri %> <i><%= t 'common.messages.help.no_need_to_slash' %></i><br>
+  <%= f.text_field :uri %></div>

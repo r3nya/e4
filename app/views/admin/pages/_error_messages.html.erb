@@ -1,0 +1,9 @@
+<% if @static_page.errors.any? %>
+  <div class="error_explanation">
+    <ul class="list">
+    <% @static_page.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>

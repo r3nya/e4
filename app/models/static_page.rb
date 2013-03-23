@@ -15,5 +15,24 @@
 class StaticPage < ActiveRecord::Base
   translate :title, :content
 
-  attr_accessible :content_en, :content_ru, :title_en, :title_ru, :uri, :title, :content
+  attr_accessible :content_en, :content_ru, :title_en, :title_ru, :uri
+
+  validates :content_en, presence: true
+  validates :title_en, presence: true
+  validates :uri, presence: true
+  validate :no_cross_with_controllers
+
+  def no_cross_with_controllers
+    # There's no way to create static page with uri, which already mapped to another controller.
+    # I. e. you can't create page with uri 'forum/rules', because it mapped to 'forum#show' (finding
+    # forum, which have uri 'rules').
+    # It's a technical restriction, not author's fault
+    # TODO: auto-detect busy URLs
+    busy_urls = ['admin', 'forum', 'comments']
+    busy_urls.each do |bu|
+      if uri.starts_with?(bu)
+        errors.add(:uri, (I18n.t('objects.page.errors.invalid_start', :busy => bu)))
+      end
+    end
+  end
 end

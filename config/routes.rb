@@ -6,7 +6,7 @@ E4::Application.routes.draw do
   namespace :admin do
     resources :menulinks
     resources :personalisation, :only => ['index', 'edit', 'update']
-    resources :pages
+    resources :pages, :as => :static_pages
     resources :forum, :only => ['index']
     namespace :forum do
       resources :metaforums do

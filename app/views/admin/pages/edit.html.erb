@@ -1,0 +1,17 @@
+<% provide :title, (t 'objects.page.edition') %>
+
+<header>
+  <h4><%= t 'objects.page.edition' %></h4>
+</header>
+
+<article>
+  <%= render 'error_messages' %>
+  <%= form_for @static_page,
+        :url => {
+                :controller => :pages,
+                :action => :update,
+        } do |f| %>
+    <%= render 'page_form', :f => f %>
+    <button type="submit"><%= t 'common.actions.edit', :obj => (t 'objects.page.self') %></button>
+  <% end %>
+</article>

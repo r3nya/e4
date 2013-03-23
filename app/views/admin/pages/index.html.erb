@@ -1,0 +1,48 @@
+<% provide :title, (t 'admin.pages.interface') %>
+<header>
+  <h3><%= t 'admin.pages.index.title' %></h3>
+</header>
+
+<article>
+  <p><%= t 'admin.pages.index.desc_html' %></p>
+  <div class="rightfloat">
+    [<%= link_to (t 'common.actions.add', :obj => (t 'objects.page.self')), new_admin_page_path %>]
+  </div>
+  <div class="clear"></div>
+  <div class="table_container">
+    <table>
+      <thead>
+        <tr>
+          <th><%= t 'activerecord.attributes.page.title' %></th>
+          <th><%= t 'activerecord.attributes.page.uri' %></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @static_pages.each do |page| %>
+          <tr>
+            <td><%= page.title %></td>
+            <td><%= "/#{page.uri}/" %></td>
+            <td><%= link_to (t 'common.actions.edit', :obj => (t 'objects.page.self')), edit_admin_page_path(page) %></td>
+            <td>
+              <%= link_to (t 'common.actions.destroy', :obj => (t 'objects.page.self')), admin_page_path(page), :data => { :confirm => (t 'common.messages.warnings.are_you_sure') }, :method => :delete %>
+            </td>
+          </tr>
+          <tr class="small">
+            <td colspan="5">
+              <p class="small">
+              <%= t 'common.footnotes.in_other_langs_known_as' %>
+              <% @localelist.each do |lc| %>
+                <% unless I18n.locale.to_s == "#{lc[0]}" %>
+                  <%= "#{lc[1]}" %>: <%= eval("page.title_#{lc[0]}") %>
+                <% end %>
+              <% end %>
+              </p>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</article>
