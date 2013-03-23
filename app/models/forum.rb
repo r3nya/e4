@@ -8,7 +8,7 @@
 #  desc_ru      :string(255)
 #  desc_en      :string(255)
 #  url          :string(255)
-#  range        :integer
+#  range        :integer          default(0)
 #  metaforum_id :string(255)
 #  newsforum    :boolean
 #  created_at   :datetime         not null

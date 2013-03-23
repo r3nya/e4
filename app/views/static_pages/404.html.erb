@@ -1,0 +1,10 @@
+<% provide :title, (t 'common.errors.404.title' ) %>
+<header>
+  <h3><%= t 'common.errors.404.title' %></h3>
+</header>
+
+<article>
+  <p><%= t 'common.errors.404.desc' %></p>
+
+  <p><%= link_to (t 'common.errors.404.get_back'), session[:previous_url] %></p>
+</article>

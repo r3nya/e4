@@ -55,6 +55,10 @@ en:
       not_implemented:
         desc: This page's functions under construction. Sorry for that.
         title: Under construction
+      '404':
+        desc: Page you looking for doesn't exist, have been moved or purged from server. Sorry.
+        title: 404. Page not found.
+        get_back: Get back
     greetings:
       welcome: Welcome, %{user}!
       hello: Hello, %{user}!
@@ -214,3 +218,5 @@ en:
   newslenta:
     welcome:
       title: News
+  user:
+    not_found_in_database: User not found

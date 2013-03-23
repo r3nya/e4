@@ -6,6 +6,7 @@ E4::Application.routes.draw do
   namespace :admin do
     resources :menulinks
     resources :personalisation, :only => ['index', 'edit', 'update']
+    resources :pages
     resources :forum, :only => ['index']
     namespace :forum do
       resources :metaforums do
@@ -27,6 +28,10 @@ E4::Application.routes.draw do
 
   # Comments
   resources :comments
+
+  # Static pages
+  # Should be last in routes, because handles ANY url
+  match '*uri' => 'static_pages#markdown'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
