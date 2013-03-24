@@ -9,10 +9,10 @@
 #  desc_en      :string(255)
 #  url          :string(255)
 #  range        :integer          default(0)
-#  metaforum_id :string(255)
 #  newsforum    :boolean
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
+#  metaforum_id :integer
 #
 
 class Forum < ActiveRecord::Base

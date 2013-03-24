@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130323205039) do
+ActiveRecord::Schema.define(:version => 20130324175623) do
 
   create_table "comments", :force => true do |t|
     t.integer  "commentable_id",   :default => 0
@@ -37,10 +37,10 @@ ActiveRecord::Schema.define(:version => 20130323205039) do
     t.string   "desc_en"
     t.string   "url"
     t.integer  "range",        :default => 0
-    t.string   "metaforum_id"
     t.boolean  "newsforum"
     t.datetime "created_at",                  :null => false
     t.datetime "updated_at",                  :null => false
+    t.integer  "metaforum_id"
   end
 
   add_index "forums", ["url"], :name => "index_forums_on_url", :unique => true
