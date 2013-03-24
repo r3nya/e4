@@ -56,8 +56,12 @@ gem 'rails-i18n'
 gem 'rails-translate'
 
 # Localeapp
-group :development do
+group :development, :production do
   gem 'localeapp'
+end
+
+group :production do
+  gem 'pg'
 end
 
 
