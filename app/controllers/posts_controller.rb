@@ -27,7 +27,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @commenteries = @post.comment_threads.page(params[:page])
+    @commenteries = @post.comment_threads
   end
 
   def preload_params
