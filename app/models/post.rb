@@ -48,6 +48,6 @@ class Post < ActiveRecord::Base
 
   def to_param
     @tutle = Russian::transliterate(subject_en)
-    "#{id}-#{@tutle.gsub(/[^a-z0-9]+/i, '-')}"
+    "#{id}-#{@tutle.gsub(/[^a-z0-9]+/i, '-')}".downcase
   end
 end
