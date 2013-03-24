@@ -5,8 +5,8 @@
 #  id           :integer          not null, primary key
 #  subject_en   :string(255)
 #  subject_ru   :string(255)
-#  message_en   :string(255)
-#  message_ru   :string(255)
+#  message_en   :text(255)
+#  message_ru   :text(255)
 #  user_id      :integer
 #  forum_id     :integer
 #  moderator_id :integer          default(1)

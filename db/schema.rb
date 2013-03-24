@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130324175623) do
+ActiveRecord::Schema.define(:version => 20130324214037) do
 
   create_table "comments", :force => true do |t|
     t.integer  "commentable_id",   :default => 0
@@ -73,17 +73,17 @@ ActiveRecord::Schema.define(:version => 20130324175623) do
   create_table "posts", :force => true do |t|
     t.string   "subject_en"
     t.string   "subject_ru"
-    t.string   "message_en"
-    t.string   "message_ru"
+    t.text     "message_en",   :limit => 255
+    t.text     "message_ru",   :limit => 255
     t.integer  "user_id"
     t.integer  "forum_id"
-    t.integer  "moderator_id", :default => 1
-    t.boolean  "sticky",       :default => false
-    t.boolean  "visible",      :default => true
-    t.boolean  "commentable",  :default => true
-    t.boolean  "article",      :default => false
-    t.datetime "created_at",                      :null => false
-    t.datetime "updated_at",                      :null => false
+    t.integer  "moderator_id",                :default => 1
+    t.boolean  "sticky",                      :default => false
+    t.boolean  "visible",                     :default => true
+    t.boolean  "commentable",                 :default => true
+    t.boolean  "article",                     :default => false
+    t.datetime "created_at",                                     :null => false
+    t.datetime "updated_at",                                     :null => false
   end
 
   create_table "static_pages", :force => true do |t|

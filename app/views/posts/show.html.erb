@@ -1,3 +1,5 @@
+<% provide :title, "#{@forum.title} — #{@post.subject}"%>
+
   <div>
     <%= link_to (t 'objects.forum.self').mb_chars.capitalize.to_s, forum_index_path %> » <%= link_to @forum.title, forum_path(@forum) %> » <%= @post.subject %>
   </div>
