@@ -16,7 +16,6 @@
     <div class="userlinks rightfloat">
         <% if user_signed_in? %>
             <%= t 'common.greetings.welcome', :user => @user.nick %>
-            <%= @user.id %>
             <div class="header_link">
                 <%= link_to "[X]", destroy_user_session_path, :method => :delete %>
             </div>
