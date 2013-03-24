@@ -60,6 +60,10 @@ group :development do
   gem 'localeapp'
 end
 
+group :production do
+  gem 'pg'
+end
+
 
 # Markdown rendering and code syntax
 
