@@ -33,6 +33,8 @@ role :db,  domain, :primary => true # This is where Rails migrations will run
 after 'deploy:update_code', :roles => :app do
 	run "rm -f #{current_release}/config/database.yml"
 	run "ln -s #{deploy_to}/shared/config/database.yml #{current_release}/config/database.yml"
+	run "rm -f #{current_release}/config/environments/production.rb"
+	run "ln -s #{deploy_to}/shared/config/production.rb #{current_release}/config/environments/production.rb"
 end
 
 namespace :deploy do
