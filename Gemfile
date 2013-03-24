@@ -80,3 +80,7 @@ gem 'will_paginate', '~> 3.0.0'
 # CRUDify
 
 gem 'crudify'
+
+# Fur SEO urls
+
+gem 'russian'

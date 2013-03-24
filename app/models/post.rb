@@ -45,4 +45,9 @@ class Post < ActiveRecord::Base
   belongs_to :forum
 
   belongs_to :user
+
+  def to_param
+    @tutle = Russian::transliterate(subject_en)
+    "#{id}-#{@tutle.gsub(/[^a-z0-9]+/i, '-')}"
+  end
 end
