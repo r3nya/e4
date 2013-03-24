@@ -35,3 +35,6 @@ public/uploads/*
 
 # Localeapp
 .localeapp
+
+# Production environments
+config/environments/production.rb
