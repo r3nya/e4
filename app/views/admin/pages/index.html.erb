@@ -24,9 +24,9 @@
           <tr>
             <td><%= page.title %></td>
             <td><%= "/#{page.uri}/" %></td>
-            <td><%= link_to (t 'common.actions.edit', :obj => (t 'objects.page.self')), edit_admin_page_path(page) %></td>
+            <td><%= link_to (t 'common.actions.edit', :obj => (t 'objects.page.self')), edit_admin_static_page_path(page) %></td>
             <td>
-              <%= link_to (t 'common.actions.destroy', :obj => (t 'objects.page.self')), admin_page_path(page), :data => { :confirm => (t 'common.messages.warnings.are_you_sure') }, :method => :delete %>
+              <%= link_to (t 'common.actions.destroy', :obj => (t 'objects.page.self')), admin_static_page_path(page), :data => { :confirm => (t 'common.messages.warnings.are_you_sure') }, :method => :delete %>
             </td>
           </tr>
           <tr class="small">
