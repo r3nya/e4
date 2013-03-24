@@ -15,7 +15,7 @@
         </div>
         <div class="clear"></div>
         <div class="news_item_text">
-            <%= post.message %>
+          <%= markdown.render(post.message).html_safe %>
         </div>
         <div class="news_item_info">
             <a href="<%= forum_post_path(post.forum, post) %>">Comments: <%= post.comment_threads.count %></a>
