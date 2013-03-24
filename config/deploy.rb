@@ -37,7 +37,7 @@ end
 
 namespace :deploy do
   task :seed do
-    run "cd #{current_path}; rake db:seed RAILS_ENV=#{rails_env}"
+    run "cd #{current_path}; #{set_ruby_cmd} && bundle exec rake db:seed RAILS_ENV=#{rails_env}"
   end
   task :restart do
     run "thin -C #{current_release}/config/#{thin} restart"
