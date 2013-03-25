@@ -18,6 +18,7 @@ class PostsController < ApplicationController
       @post.article = true
     end
     if @post.save
+      track_it(@post)
       redirect_to forum_post_path(@forum, @post)
     else
       flash.now[:error] = t 'common.messages.errors.form_invalid'

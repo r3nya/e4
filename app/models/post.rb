@@ -46,8 +46,14 @@ class Post < ActiveRecord::Base
 
   belongs_to :user
 
+  has_many :tracker_lines
+
   def to_param
     @tutle = Russian::transliterate(subject_en)
     "#{id}-#{@tutle.gsub(/[^a-z0-9]+/i, '-')}".downcase
+  end
+
+  def absolute_url
+    E4::Application.routes.url_helpers.forum_post_path(forum, self)
   end
 end

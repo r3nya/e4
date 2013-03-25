@@ -14,6 +14,7 @@ class CommentsController < ApplicationController
       if defined?(@threadable)
         @comment.move_to_child_of(@parent_comment)
       end
+      track_it(@comment)
     else
       render 'new'
     end

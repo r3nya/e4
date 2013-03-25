@@ -126,6 +126,9 @@ en:
         content_ru: Page's content in Russian
         title_ru: Title in Russian
         uri: URL
+      tracker_line:
+        created_at: Date
+        title: Subject
   admin:
     interface: Administrative interface
     menulinks:
@@ -257,3 +260,5 @@ en:
     created: Object created
     destroyed: Object destroyed
     updated: Object updated
+  tracker:
+    title: Tracker

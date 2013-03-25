@@ -29,6 +29,10 @@ E4::Application.routes.draw do
   # Comments
   resources :comments
 
+  # Tracker
+
+  resources :tracker, :only => ['index']
+
   # Static pages
   # Should be last in routes, because handles ANY url
   match '*uri' => 'static_pages#markdown'

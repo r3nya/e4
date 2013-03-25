@@ -126,6 +126,9 @@ ru:
         content_en: Содержание страницы на английском языке
         content_ru: Содержание страницы на русском языке
         uri: URL
+      tracker_line:
+        created_at: Время
+        title: Заголовок
   admin:
     interface: Интерфейс администратора
     menulinks:
@@ -259,3 +262,5 @@ ru:
     created: Объект создан
     destroyed: Объект удалён
     updated: Объект обновлён
+  tracker:
+    title: Трекер

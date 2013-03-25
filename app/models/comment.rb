@@ -78,6 +78,14 @@ class Comment < ActiveRecord::Base
     end
   end
 
+  # Helper class method to give us fake 'title'
+  def subj
+    case commentable_type
+      when "Post"
+        "Re: #{commentable.subject}"
+    end
+  end
+
   # Pagination
   self.per_page = 10
 end

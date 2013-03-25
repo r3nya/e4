@@ -91,4 +91,11 @@ class ApplicationController < ActionController::Base
       redirect_to redirect
     end
   end
+
+  # Helper for creating tracker notifications
+  def track_it(object)
+    @trackline = TrackerLine.new()
+    @trackline.obj = object
+    @trackline.save
+  end
 end
