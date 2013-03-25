@@ -129,6 +129,8 @@ ru:
       tracker_line:
         created_at: Время
         title: Заголовок
+      tracker_link:
+        user: Отправлено пользователем
   admin:
     interface: Интерфейс администратора
     menulinks:

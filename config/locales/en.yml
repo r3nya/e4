@@ -129,6 +129,8 @@ en:
       tracker_line:
         created_at: Date
         title: Subject
+      tracker_link:
+        user: Posted by
   admin:
     interface: Administrative interface
     menulinks:
