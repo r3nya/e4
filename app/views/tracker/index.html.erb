@@ -10,6 +10,9 @@
         <div class="tracker_link">
           <%= t 'activerecord.attributes.tracker_line.title' %>
         </div>
+        <div class="tracker_user">
+          <%= t 'activerecord.attributes.tracker_link.user' %>
+        </div>
         <div class="tracker_date">
           <%= t 'activerecord.attributes.tracker_line.created_at' %>
         </div>
@@ -18,6 +21,9 @@
       <div class="tracker_line">
         <div class="tracker_link">
           <%= link_to line.title, line.obj.absolute_url %>
+        </div>
+        <div class="tracker_user">
+          <%= line.obj.user.nick %>
         </div>
         <div class="tracker_date">
           <%= l line.created_at, :format => :long %>

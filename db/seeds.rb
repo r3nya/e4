@@ -8,7 +8,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Menulink.create([{ title_en: 'News', title_ru: 'Новости', url: 'news', range: 3 },
-                 { title_en: 'Tracker', title_ru: 'Трекер', url: 'tracker', range: 2 }
+                 { title_en: 'Tracker', title_ru: 'Трекер', url: 'tracker', range: 2 },
                  { title_en: 'Forum', title_ru: 'Форум', url: 'forum', range: 1 }])
 
 # Site personalisation
