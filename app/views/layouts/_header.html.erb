@@ -13,9 +13,11 @@
         </div>
         <% end %>
     </div>
-    <div class="userlinks rightfloat">
+    <div class="user_links rightfloat">
         <% if user_signed_in? %>
-            <%= t 'common.greetings.welcome', :user => @user.nick %>
+            <div class="user_welcome">
+                <%= t 'common.greetings.welcome', :user => @user.nick %>
+            </div>
             <div class="header_link">
                 <%= link_to "[X]", destroy_user_session_path, :method => :delete %>
             </div>
