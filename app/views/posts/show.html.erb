@@ -12,8 +12,8 @@
       <%= image_tag avatar_url(@post.user) %>
     </div>
     <div class="user_data">
-          <%= (t 'objects.comment.plural').mb_chars.capitalize.to_s %>: <%= @user.comments.count %><br>
-          <%= (t 'objects.post.plural').mb_chars.capitalize.to_s %>: <%= @user.posts.count %><br>
+          <%= (t 'objects.comment.plural').mb_chars.capitalize.to_s %>: <%= @post.user.comments.count %><br>
+          <%= (t 'objects.post.plural').mb_chars.capitalize.to_s %>: <%= @post.user.posts.count %><br>
     </div>
     <div class="post_actions">
         {EDIT} {DELETE} {HIDE}
@@ -60,8 +60,8 @@
           <%= image_tag avatar_url(comment.user) %>
         </div>
         <div class="user_data">
-          <%= (t 'objects.comment.plural').mb_chars.capitalize.to_s %>: <%= @user.comments.count %><br>
-          <%= (t 'objects.post.plural').mb_chars.capitalize.to_s %>: <%= @user.posts.count %><br>
+          <%= (t 'objects.comment.plural').mb_chars.capitalize.to_s %>: <%= comment.user.comments.count %><br>
+          <%= (t 'objects.post.plural').mb_chars.capitalize.to_s %>: <%= comment.user.posts.count %><br>
         </div>
       </div>
       <div class="message">
