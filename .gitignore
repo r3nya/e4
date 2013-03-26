@@ -38,3 +38,6 @@ public/uploads/*
 
 # Production environments
 config/environments/production.rb
+
+#Lock files
+*.lock
