@@ -12,12 +12,15 @@
                 <p class="forum_p"><%= "#{metaforum.desc}" %></p>
                 <% metaforum.forums.ordered.each do |forum| %>
                     <div class="forum_data">
+                      <div class="forum_cont">
                         <div class="forum">
                             <p class="forum_p"><span class="forum_name"><%= link_to forum.title, forum_path(forum.url) %></span></p>
                             <p class="forum_p"><span class="forum_description"><%= forum.desc %></span></p>
+                            <div class="clear"></div>
                         </div>
                         <div class="forum_posts">
-                            <%= forum.posts.count %>
+                            <p><%= forum.posts.count %></p>
+                          <div class="clear"></div>
                         </div>
                         <% if forum.posts.empty? %>
                           <div class="forum_last_topic">
@@ -25,7 +28,9 @@
                           </div>
                         <% else %>
                           <div class="forum_last_topic">
-                            <img class="forum_index_avatar" src="<%= avatar_url(forum.posts.last.user) %>">
+                            <div class="forum_index_avatar">
+                              <img class="forum_index_avatar" src="<%= avatar_url(forum.posts.last.user) %>">
+                            </div>
                             <% if forum.posts.last.comment_threads.empty? %>
                               <p class="forum_p"><%= link_to forum.posts.last.subject, forum_post_path(forum, forum.posts.last) %></p>
                             <% else %>
@@ -40,6 +45,9 @@
                             </p>
                           </div>
                         <% end %>
+                        <div class="clear"></div>
+                      </div>
+                      <div class="clear"></div>
                     </div>
                 <div class="clear"></div>
             <% end %>
