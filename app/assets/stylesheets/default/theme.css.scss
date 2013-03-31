@@ -292,21 +292,21 @@ div.field_with_errors {
 .forum_container {
 }
 
-.forum_container a {
+.forum_container a, .tracker_container a {
     transition: color 0.3s, text-shadow 0.3s linear 0s;
     -webkit-transition: color 0.3s, text-shadow 0.3s linear 0s;
     color: #aaa;
     text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
 }
 
-.forum_container a:hover {
+.forum_container a:hover, .tracker_container a:hover {
     transition: color 0.3s, text-shadow 0.3s linear 0s;
     -webkit-transition: color 0.3s, text-shadow 0.3s linear 0s;
     color: #47bbff;
     text-shadow:         0px 0px 5px rgba(200, 200, 200, 0.8);
 }
 
-.metaforum {
+.metaforum, .tracker_container {
     background-color: #767676;
     color: white;
     margin-bottom: 5px;
@@ -601,15 +601,34 @@ button {
 // = Tracker ===================================================================================================
 // =============================================================================================================
 
-.tracker_line {
-  width:  100%;
+.tracker_container p {
+    line-height: 1;
+    margin: 0;
+    margin-top: 2px;
+    padding: 1px;
 }
 
-.tracker_link, .tracker_date {
-  display: inline-block;
-  position: relative;
+.tracker_line {
+    min-height: 2.5em;
+    border: 1px solid #888;
 }
 
 .tracker_link {
-  width:  80%;
+    float: left;
+    width: 79%;
+    background-color: #555;
+    margin: 0;
+    padding: 0;
+    min-height: 2.5em;
+    padding-left: 5px;
+}
+
+.tracker_post_info {
+    float: left;
+    width: 20%;
+    background-color: #555;
+    min-height: 2.5em;
+    max-height: 4em;
+    padding-right: 5px;
+    text-align: right;
 }
