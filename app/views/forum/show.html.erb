@@ -1,7 +1,7 @@
 <% provide(:title, "#{(t 'forum.welcome.title')} — #{@forum.title}") %>
 
 <header>
-    <h3><%= t 'forum.welcome.title' %> — <%= @forum.title %></h3>
+    <h3><%= link_to (t 'forum.welcome.title'), forum_index_path %> — <%= @forum.title %></h3>
 </header>
 
 <article>
